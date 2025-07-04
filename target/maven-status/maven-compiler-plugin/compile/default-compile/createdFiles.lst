@@ -7,6 +7,7 @@ com\raven\chart\blankchart\BlankPlotChatRender.class
 com\mycompany\nhom3_quanlyphonggyms\entity\SpecialPerson.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$17.class
+com\mycompany\nhom3_quanlyphonggyms\view\jTable1.class
 com\mycompany\nhom3_quanlyphonggyms\view\LoginView$RoundedBorder.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$ClearResidentListener.class
 com\mycompany\nhom3_quanlyphonggyms\entity\SpecialPersonXML.class
@@ -15,6 +16,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$MyRenderer.class
 com\mycompany\nhom3_quanlyphonggyms\view\LoginView.class
 com\raven\chart\LegendItem.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerResidents$1.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$2.class
 com\raven\main\Main$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\LoginController$LoginListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$AddResidentListener.class
@@ -44,6 +46,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$12.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$19.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$SearchResidentListener.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerResidents.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$5.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$StatisticSpecialPersonAgeListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$12.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$16.class
@@ -52,6 +55,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\MainController$ChooseSpecialPerso
 com\mycompany\nhom3_quanlyphonggyms\QuanLyDoiTuong\QuanLyPhongGyms.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$7.class
+com\mycompany\nhom3_quanlyphonggyms\view\jTextField1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$SortSpecialPersonNameListener.class
@@ -63,6 +67,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$11.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$13.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$UndoListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$8.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$17.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$DeleteSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\utils\FileUtils.class
@@ -70,6 +75,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$7.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$EditSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerSpecialPerson$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$StatisticClearListener.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$3.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$5.class
 com\mycompany\nhom3_quanlyphonggyms\entity\Person.class
 com\raven\chart\blankchart\SeriesSize.class
@@ -99,8 +105,10 @@ com\mycompany\nhom3_quanlyphonggyms\action\ManagerResidents$2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$ListSpecialPersonSelectionListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$18.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$23.class
+com\mycompany\nhom3_quanlyphonggyms\controller\MemberController.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$15.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$8.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$6.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$ClearSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerSpecialPerson$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$MyRenderer.class
@@ -110,6 +118,7 @@ com\raven\chart\Chart.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$SortSpecialPersonIDListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\MainController.class
 com\raven\chart\blankchart\BlankPlotChart.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain$1.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView.class
 com\mycompany\nhom3_quanlyphonggyms\view\LoginView$1.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$19.class
@@ -122,6 +131,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$RoundedBorder.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$15.class
 com\raven\main\Main$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$13.class
+com\mycompany\nhom3_quanlyphonggyms\view\viewtrain.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$AddSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$CancelDialogSearchResidentListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$StatisticViewListener.class
