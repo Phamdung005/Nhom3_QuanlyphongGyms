@@ -39,48 +39,48 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnChooseResidents" alignment="0" min="-2" pref="387" max="-2" attributes="0"/>
-                  <Component id="btnChooseRoom" alignment="0" min="-2" pref="387" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnChooseSpecialPerson" pref="0" max="32767" attributes="0"/>
-                  <Component id="btnChooseTrainer" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnChooseRoom" min="-2" pref="387" max="-2" attributes="0"/>
+                  <Component id="btnChooseMember" min="-2" pref="387" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel4" min="-2" pref="581" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnChooseTrainer" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnChooseExerciseType" alignment="1" min="-2" pref="385" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+              <Component id="jLabel4" pref="1051" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnChooseResidents" min="-2" pref="170" max="-2" attributes="0"/>
-                  <Component id="btnChooseSpecialPerson" min="-2" pref="170" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnChooseTrainer" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="btnChooseMember" min="-2" pref="170" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace pref="96" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnChooseRoom" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                  <Component id="btnChooseTrainer" alignment="1" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="btnChooseRoom" min="-2" pref="170" max="-2" attributes="0"/>
+                  <Component id="btnChooseExerciseType" min="-2" pref="170" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnChooseSpecialPerson">
+    <Component class="javax.swing.JButton" name="btnChooseExerciseType">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -91,7 +91,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Qu&#x1ea3;n l&#xfd; c&#xe1;c &#x111;&#x1ed1;i t&#x1b0;&#x1ee3;ng &#x111;&#x1eb7;c bi&#x1ec7;t&lt;br&gt;&lt;/div&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Qu&#x1ea3;n l&#xfd; lo&#x1ea1;i h&#xec;nh&lt;br&gt;&lt;/div&gt;"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -102,10 +102,10 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChooseSpecialPersonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChooseExerciseTypeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnChooseResidents">
+    <Component class="javax.swing.JButton" name="btnChooseMember">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -116,7 +116,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Qu&#x1ea3;n l&#xfd; d&#xe2;n c&#x1b0;&lt;br&gt;&lt;/div&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Qu&#x1ea3;n L&#xfd; h&#x1ecd;c vi&#xea;n&lt;br&gt;&lt;/div&gt;"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -127,7 +127,7 @@
         <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChooseResidentsActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChooseMemberActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -136,12 +136,12 @@
           <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="36" style="1"/>
+          <Font name="Segoe UI" size="36" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;Qu&#x1ea3;n l&#xfd; ph&#xf2;ng GYM DLT&lt;br&gt; "/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&#xa;    &lt;h1&gt;QU&#x1ea2;N L&#xdd; PH&#xd2;NG GYM DLT&lt;/h1&gt;&#xa;&lt;/div&gt;&#xa;"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
     </Component>

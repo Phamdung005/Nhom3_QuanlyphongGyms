@@ -6,9 +6,11 @@ package com.mycompany.nhom3_quanlyphonggyms.controller;
 
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerSpecialPerson;
 import com.mycompany.nhom3_quanlyphonggyms.entity.SpecialPerson;
+import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.ManagerView;
+import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
 import com.mycompany.nhom3_quanlyphonggyms.view.ResidentView;
 import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
 import java.awt.event.ActionEvent;
@@ -22,42 +24,22 @@ import java.util.List;
 public class MainController 
 {
     private LoginView loginView;
-    private ManagerView managerView;
-    private ResidentView residentView;
+    private MemberView memberView;
+    private ExerciseTypeView exerciseTypeView;
     private RoomView roomView;
     private MainView mainView;
     
     public MainController(MainView view)
     {
         this.mainView = view;
-        view.addChooseSpecialPersonListener(new ChooseSpecialPersonListener());
-        view.addChooseResidentsListener(new ChooseResidentListener());
         view.addChooseRoomListener(new ChooseRoomListener());
+        view.addChooseMemberListener(new ChooseMemberListener());
+        view.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
+
     }
     public void showMainView() 
     {
         mainView.setVisible(true);
-    }
-    class ChooseSpecialPersonListener implements ActionListener 
-    {
-        public void actionPerformed(ActionEvent e) 
-        {
-            managerView = new ManagerView();
-            SpecialPersonController managerController = new SpecialPersonController(managerView);
-            managerController.showManagerView();
-            mainView.setVisible(false);
-        }
-    }
-    
-    class ChooseResidentListener implements ActionListener 
-    {
-        public void actionPerformed(ActionEvent e) 
-        {
-            residentView = new ResidentView();
-            ResidentController residentController = new ResidentController(residentView);
-            residentController.showManagerView();
-            mainView.setVisible(false);
-        }
     }
     class ChooseRoomListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -67,5 +49,25 @@ public class MainController
            mainView.setVisible(false);
         }
     }
+    class ChooseMemberListener implements ActionListener {
+    @Override
+        public void actionPerformed(ActionEvent e) {
+            memberView = new MemberView();
+            MemberController controller = new MemberController(memberView, mainView);
+            memberView.setVisible(true);
+            mainView.setVisible(false);
+        }
+    }
+
+    class ChooseExerciseTypeListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            exerciseTypeView = new ExerciseTypeView();
+            ExerciseTypeController controller = new ExerciseTypeController(exerciseTypeView, mainView);
+            exerciseTypeView.setVisible(true);
+            mainView.setVisible(false);
+        }
+    }
+
     
 }

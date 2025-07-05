@@ -34,8 +34,8 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        btnChooseSpecialPerson = new javax.swing.JButton();
-        btnChooseResidents = new javax.swing.JButton();
+        btnChooseExerciseType = new javax.swing.JButton();
+        btnChooseMember = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnChooseRoom = new javax.swing.JButton();
         btnChooseTrainer = new javax.swing.JButton();
@@ -47,38 +47,38 @@ public class MainView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(960, 679));
 
-        btnChooseSpecialPerson.setBackground(new java.awt.Color(0, 0, 102));
-        btnChooseSpecialPerson.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        btnChooseSpecialPerson.setForeground(new java.awt.Color(255, 255, 255));
-        btnChooseSpecialPerson.setText("<html><div style='text-align: center;'>Quản lý các đối tượng đặc biệt<br></div>");
-        btnChooseSpecialPerson.setToolTipText("");
-        btnChooseSpecialPerson.setBorder(null);
-        btnChooseSpecialPerson.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnChooseSpecialPerson.setOpaque(true);
-        btnChooseSpecialPerson.addActionListener(new java.awt.event.ActionListener() {
+        btnChooseExerciseType.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseExerciseType.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        btnChooseExerciseType.setForeground(new java.awt.Color(255, 255, 255));
+        btnChooseExerciseType.setText("<html><div style='text-align: center;'>Quản lý loại hình<br></div>");
+        btnChooseExerciseType.setToolTipText("");
+        btnChooseExerciseType.setBorder(null);
+        btnChooseExerciseType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnChooseExerciseType.setOpaque(true);
+        btnChooseExerciseType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChooseSpecialPersonActionPerformed(evt);
+                btnChooseExerciseTypeActionPerformed(evt);
             }
         });
 
-        btnChooseResidents.setBackground(new java.awt.Color(0, 0, 102));
-        btnChooseResidents.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        btnChooseResidents.setForeground(new java.awt.Color(255, 255, 255));
-        btnChooseResidents.setText("<html><div style='text-align: center;'>Quản lý dân cư<br></div>");
-        btnChooseResidents.setToolTipText("");
-        btnChooseResidents.setBorder(null);
-        btnChooseResidents.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnChooseResidents.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnChooseResidents.addActionListener(new java.awt.event.ActionListener() {
+        btnChooseMember.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseMember.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        btnChooseMember.setForeground(new java.awt.Color(255, 255, 255));
+        btnChooseMember.setText("<html><div style='text-align: center;'>Quản Lý học viên<br></div>");
+        btnChooseMember.setToolTipText("");
+        btnChooseMember.setBorder(null);
+        btnChooseMember.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnChooseMember.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnChooseMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChooseResidentsActionPerformed(evt);
+                btnChooseMemberActionPerformed(evt);
             }
         });
 
         jLabel4.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("<html>Quản lý phòng GYM DLT<br> ");
+        jLabel4.setText("<html><div style=\"text-align: center;\">\n    <h1>QUẢN LÝ PHÒNG GYM DLT</h1>\n</div>\n");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnChooseRoom.setBackground(new java.awt.Color(0, 0, 102));
@@ -105,47 +105,47 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnChooseResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnChooseSpecialPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnChooseTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(118, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166))
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnChooseTrainer, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1051, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnChooseTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnChooseResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChooseSpecialPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnChooseRoom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChooseTrainer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                    .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnChooseSpecialPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseSpecialPersonActionPerformed
+    private void btnChooseExerciseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseExerciseTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnChooseSpecialPersonActionPerformed
+    }//GEN-LAST:event_btnChooseExerciseTypeActionPerformed
 
-    private void btnChooseResidentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseResidentsActionPerformed
+    private void btnChooseMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseMemberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnChooseResidentsActionPerformed
+    }//GEN-LAST:event_btnChooseMemberActionPerformed
 
     private void btnChooseRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseRoomActionPerformed
         // TODO add your handling code here:
@@ -199,26 +199,24 @@ public class MainView extends javax.swing.JFrame {
         });
     }
     
-    public void addChooseSpecialPersonListener(ActionListener listener){
-        btnChooseSpecialPerson.addActionListener(listener);
-    }
-    
-    public void addChooseResidentsListener(ActionListener listener){
-        btnChooseResidents.addActionListener(listener);
-    }
-    
     public void addChooseRoomListener(ActionListener listener) {
         btnChooseRoom.addActionListener(listener);
     }
     public void addChooseTrainerListener(ActionListener listener) {
         btnChooseTrainer.addActionListener(listener);
     }
+    public void addChooseMemberListener(ActionListener listener) {
+        btnChooseMember.addActionListener(listener);
+    }
+    public void addChooseExerciseTypeListener(ActionListener listener) {
+        btnChooseExerciseType.addActionListener(listener);
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnChooseResidents;
+    private javax.swing.JButton btnChooseExerciseType;
+    private javax.swing.JButton btnChooseMember;
     private javax.swing.JButton btnChooseRoom;
-    private javax.swing.JButton btnChooseSpecialPerson;
     private javax.swing.JButton btnChooseTrainer;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
