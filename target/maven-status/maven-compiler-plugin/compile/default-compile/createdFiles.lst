@@ -16,6 +16,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$9.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$MyRenderer.class
 com\mycompany\nhom3_quanlyphonggyms\entity\RoomXML.class
 com\mycompany\nhom3_quanlyphonggyms\view\LoginView.class
+com\mycompany\nhom3_quanlyphonggyms\controller\HocVienController.class
 com\raven\chart\LegendItem.class
 com\mycompany\nhom3_quanlyphonggyms\controller\RoomController$SortByCapacityDescListener.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerResidents$1.class
@@ -27,6 +28,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\LoginView$2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\LoginController.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$21.class
 com\raven\chart\blankchart\NiceScale.class
+com\mycompany\nhom3_quanlyphonggyms\view\HocVienView$3.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$UndoListener.class
 com\mycompany\nhom3_quanlyphonggyms\entity\ExerciseType.class
@@ -76,6 +78,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$UndoListe
 com\mycompany\nhom3_quanlyphonggyms\controller\MainController$ChooseRoomListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$8.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$6.class
+com\mycompany\nhom3_quanlyphonggyms\entity\HocVien.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$17.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$DeleteSpecialPersonListener.class
@@ -95,6 +98,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$MyRenderer2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$EditResidentListener.class
 com\mycompany\nhom3_quanlyphonggyms\entity\Residents.class
 com\mycompany\nhom3_quanlyphonggyms\entity\ResidentXML.class
+com\mycompany\nhom3_quanlyphonggyms\view\HocVienView.class
 com\mycompany\nhom3_quanlyphonggyms\view\RoomView$2.class
 com\raven\chart\ModelChart.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerSpecialPerson.class
@@ -140,6 +144,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\RoomView$4.class
 com\mycompany\nhom3_quanlyphonggyms\controller\RoomController$AddRoomListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView.class
 com\mycompany\nhom3_quanlyphonggyms\view\LoginView$1.class
+com\mycompany\nhom3_quanlyphonggyms\view\HocVienView$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$19.class
 com\mycompany\nhom3_quanlyphonggyms\controller\RoomController$SortByNameListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\RoomView.class
@@ -165,6 +170,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$MyRenderer2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$ImageSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\entity\Member.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$4.class
+com\mycompany\nhom3_quanlyphonggyms\view\HocVienView$1.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$9.class
 com\raven\main\Main$3.class
 com\mycompany\nhom3_quanlyphonggyms\view\RoomView$3.class
