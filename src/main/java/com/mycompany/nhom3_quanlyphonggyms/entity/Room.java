@@ -18,7 +18,7 @@ public class Room {
         this.name = name;
         this.capacity = capacity;
     }
-
+    
     public void setId(String id) {
         this.id = id;
     }

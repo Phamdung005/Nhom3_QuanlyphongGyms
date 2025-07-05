@@ -11,13 +11,14 @@ public class ManagerRooms {
 
     public ManagerRooms() {
         roomList = new ArrayList<>();
-        // Dữ liệu mẫu
-        roomList.add(new Room("R01", "Phòng Cardio", 20));
-        roomList.add(new Room("R02", "Phòng Yoga", 30));
     }
 
     public List<Room> getRoomList() {
         return roomList;
+    }
+    
+    public void setRoomList(List<Room> roomList) {
+        this.roomList = roomList;
     }
 
     public void addRoom(Room room) {
@@ -32,7 +33,6 @@ public class ManagerRooms {
             }
         }
     }
-
     public void deleteRoom(Room room) {
         roomList.removeIf(r -> r.getId().equals(room.getId()));
     }

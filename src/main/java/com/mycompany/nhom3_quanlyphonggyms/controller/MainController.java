@@ -10,6 +10,7 @@ import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.ManagerView;
 import com.mycompany.nhom3_quanlyphonggyms.view.ResidentView;
+import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -23,6 +24,7 @@ public class MainController
     private LoginView loginView;
     private ManagerView managerView;
     private ResidentView residentView;
+    private RoomView roomView;
     private MainView mainView;
     
     public MainController(MainView view)
@@ -30,6 +32,7 @@ public class MainController
         this.mainView = view;
         view.addChooseSpecialPersonListener(new ChooseSpecialPersonListener());
         view.addChooseResidentsListener(new ChooseResidentListener());
+        view.addChooseRoomListener(new ChooseRoomListener());
     }
     public void showMainView() 
     {
@@ -56,4 +59,13 @@ public class MainController
             mainView.setVisible(false);
         }
     }
+    class ChooseRoomListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+           roomView = new RoomView();
+           RoomController roomController = new RoomController(roomView, mainView);
+           roomController.showRoomView();
+           mainView.setVisible(false);
+        }
+    }
+    
 }
