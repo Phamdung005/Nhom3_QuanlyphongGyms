@@ -65,7 +65,13 @@ public class RoomController {
         view.addSearchRoomListener(new SearchRoomListener());
         view.addRoomSelectionListener(new RoomSelectionListener());
         view.addBackButtonListener(new BackButtonListener());
+        view.addSortByIdListener(new SortByIdListener());
+        view.addSortByNameListener(new SortByNameListener());
+        view.addSortByCapacityAscListener(new SortByCapacityAscListener());
+        view.addSortByCapacityDescListener(new SortByCapacityDescListener());
+        view.addSortByCreatedAtListener(new SortByCreatedAtListener());
     }
+    
     
     
     public void showRoomView() {
@@ -165,5 +171,38 @@ public class RoomController {
         }
     }
     
+    class SortByIdListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            managerRooms.sortById();
+            roomView.showRoomList(managerRooms.getRoomList());
+        }
+    }
+    
+    class SortByNameListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            managerRooms.sortByName();
+            roomView.showRoomList(managerRooms.getRoomList());
+        }
+    }
+    
+    class SortByCapacityAscListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            managerRooms.sortByCapacityAsc();
+            roomView.showRoomList(managerRooms.getRoomList());
+        }
+    }
+
+    class SortByCapacityDescListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            managerRooms.sortByCapacityDesc();
+            roomView.showRoomList(managerRooms.getRoomList());
+        }
+    }
+    class SortByCreatedAtListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            managerRooms.sortByCreatedAt();
+            roomView.showRoomList(managerRooms.getRoomList());
+        }
+    }
 }
 

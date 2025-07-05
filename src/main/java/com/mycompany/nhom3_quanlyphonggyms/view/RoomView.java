@@ -78,6 +78,12 @@ public class RoomView extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        btnSortById = new javax.swing.JButton();
+        btnSortByName = new javax.swing.JButton();
+        btnSortByCapacityAsc = new javax.swing.JButton();
+        btnSortByCapacityDesc = new javax.swing.JButton();
+        btnSortByCreatedAt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
@@ -119,6 +125,39 @@ public class RoomView extends javax.swing.JFrame {
         btnBack.setBackground(new java.awt.Color(204, 204, 204));
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnBack.setText("Quay lại");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setText("SẮP XẾP");
+
+        btnSortById.setBackground(new java.awt.Color(204, 204, 204));
+        btnSortById.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSortById.setText("Sắp xếp theo mã phòng");
+        btnSortById.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortByIdActionPerformed(evt);
+            }
+        });
+
+        btnSortByName.setBackground(new java.awt.Color(204, 204, 204));
+        btnSortByName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSortByName.setText("Sắp xếp theo tên phòng\n");
+
+        btnSortByCapacityAsc.setBackground(new java.awt.Color(204, 204, 204));
+        btnSortByCapacityAsc.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSortByCapacityAsc.setText("Sắp xếp theo sức chứa tăng dần\n");
+
+        btnSortByCapacityDesc.setBackground(new java.awt.Color(204, 204, 204));
+        btnSortByCapacityDesc.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSortByCapacityDesc.setText("Sắp xếp theo sức chứa giảm dần");
+
+        btnSortByCreatedAt.setBackground(new java.awt.Color(204, 204, 204));
+        btnSortByCreatedAt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSortByCreatedAt.setText("Sắp xếp theo thời gian tạo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,15 +165,37 @@ public class RoomView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSortByCreatedAt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSortById, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSortByCapacityDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSortByCapacityAsc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSortByName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(162, 162, 162)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(btnSortById, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSortByName, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSortByCapacityAsc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSortByCapacityDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSortByCreatedAt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -215,8 +276,8 @@ public class RoomView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -248,7 +309,7 @@ public class RoomView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,6 +354,14 @@ public class RoomView extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSortByIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortByIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSortByIdActionPerformed
     public void showRoom(Room room) {
         txtId.setText(room.getId());
         txtName.setText(room.getName());
@@ -340,7 +409,27 @@ public class RoomView extends javax.swing.JFrame {
     public void addBackButtonListener(ActionListener listener) {
         btnBack.addActionListener(listener);
     }
-
+    
+    public void addSortByIdListener(ActionListener listener) {
+        btnSortById.addActionListener(listener);
+    }
+    
+    public void addSortByNameListener(ActionListener listener) {
+        btnSortByName.addActionListener(listener);
+    }
+    
+    public void addSortByCapacityAscListener(ActionListener listener) {
+        btnSortByCapacityAsc.addActionListener(listener);
+    }
+    
+    public void addSortByCapacityDescListener(ActionListener listener) {
+        btnSortByCapacityDesc.addActionListener(listener);
+    }
+    
+    public void addSortByCreatedAtListener(ActionListener listener) {
+        btnSortByCreatedAt.addActionListener(listener);
+    }
+    
     public int getSelectedRow() {
         return table.getSelectedRow();
     }
@@ -407,11 +496,17 @@ public class RoomView extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSortByCapacityAsc;
+    private javax.swing.JButton btnSortByCapacityDesc;
+    private javax.swing.JButton btnSortByCreatedAt;
+    private javax.swing.JButton btnSortById;
+    private javax.swing.JButton btnSortByName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

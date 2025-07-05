@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.nhom3_quanlyphonggyms.entity;
-
+ 
 /**
  *
  * @author Admin
  */
 public class Trainer {
+    private String id;
     private String name;
     private String expertise;
     private String phone;
@@ -17,6 +18,14 @@ public class Trainer {
         this.name = name;
         this.expertise = expertise;
         this.phone = phone;
+        this.id = id;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
     }
     public void setName(String name) {
         this.name = name;

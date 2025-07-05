@@ -52,11 +52,20 @@ public class ManagerRooms {
                 .filter(r -> r.getName().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
-
+    
+    public void sortById() {
+        roomList.sort(Comparator.comparing(Room::getId));
+    }
     public void sortByName() {
         roomList.sort(Comparator.comparing(Room::getName));
     }
-    public void sortByCapacity() {
+    public void sortByCapacityAsc() {
         roomList.sort(Comparator.comparingInt(Room::getCapacity));
+    }
+    public void sortByCapacityDesc() {
+        roomList.sort(Comparator.comparingInt(Room::getCapacity).reversed());
+    }
+    public void sortByCreatedAt() {
+        roomList.sort(Comparator.comparing(Room::getCreatedAt));
     }
 }

@@ -60,7 +60,7 @@ public class ResidentController
         residentView.showStatisticIDFamily(residentsList);
     }
     
-    class UndoListener implements ActionListener 
+    class UndoListener implements ActionListener  
     {
         public void actionPerformed(ActionEvent e) 
         {
