@@ -64,11 +64,11 @@ public class LoginView extends javax.swing.JFrame
         userNameField = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
-        btnLogin = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
@@ -148,6 +148,17 @@ public class LoginView extends javax.swing.JFrame
         passwordField.setBounds(340, 430, 310, 50);
         passwordField.setOpaque(false);
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51, 150));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Đăng Nhập");
+
+        jLabel4.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/male.png"));
+
+        jLabel5.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/lock.png"));
+
         btnLogin.setBackground(new java.awt.Color(255, 255, 255, 0));
         btnLogin.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,21 +171,6 @@ public class LoginView extends javax.swing.JFrame
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogin);
-        btnLogin.setBounds(410, 510, 180, 60);
-        btnLogin.getAccessibleContext().setAccessibleName("");
-        btnLogin.setOpaque(false);
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51, 150));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Đăng Nhập");
-
-        jLabel4.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/male.png"));
-
-        jLabel5.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/lock.png"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -185,10 +181,15 @@ public class LoginView extends javax.swing.JFrame
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(164, 164, 164))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -200,8 +201,13 @@ public class LoginView extends javax.swing.JFrame
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
+
+        btnLogin.getAccessibleContext().setAccessibleName("");
+        btnLogin.setOpaque(false);
 
         jPanel2.add(jPanel1);
         jPanel1.setBounds(200, 180, 570, 420);

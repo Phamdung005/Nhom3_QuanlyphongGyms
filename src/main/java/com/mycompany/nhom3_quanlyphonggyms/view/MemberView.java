@@ -20,6 +20,8 @@ public class MemberView extends javax.swing.JFrame {
     /**
      * Creates new form MemberView
      */
+    
+    private List<ExerciseType> currentExerciseTypes;
     public MemberView() {
         initComponents();
     }
@@ -279,13 +281,13 @@ public class MemberView extends javax.swing.JFrame {
     }
 
     public void setExerciseTypeComboBox(List<ExerciseType> types) {
+        currentExerciseTypes = types;
         cbExerciseType.removeAllItems();
         for (ExerciseType t : types) {
             cbExerciseType.addItem(t.getName());
         }
     }
 
-// Lấy thông tin học viên từ form
     public Member getMemberInfo() {
         String id = txtId.getText().trim();
         String name = txtName.getText().trim();
@@ -298,14 +300,18 @@ public class MemberView extends javax.swing.JFrame {
             showMessage("Vui lòng nhập đầy đủ thông tin.");
             return null;
         }
-
-        ExerciseType exerciseType = new ExerciseType("", "", exerciseTypeName); // giả định chỉ có tên
-        Room room = new Room("", roomName, 0); // giả định chỉ có tên
-
+        ExerciseType exerciseType = null;
+        for(ExerciseType t : currentExerciseTypes) {
+            if (t.getName().equals(exerciseTypeName)) {
+                exerciseType = t;
+                break;
+            }
+        }
+        
+        Room room = new Room("", roomName, 0);
         return new Member(id, name, dob, phone, exerciseType, room);
     }
 
-// Hiển thị danh sách học viên ra bảng
     public void showMemberList(List<Member> members) {
         String[] columnNames = {"Mã HV", "Tên HV", "Ngày sinh", "SĐT", "Loại hình", "Phòng tập"};
         Object[][] data = new Object[members.size()][6];
@@ -315,23 +321,21 @@ public class MemberView extends javax.swing.JFrame {
             data[i][1] = m.getName();
             data[i][2] = m.getDob();
             data[i][3] = m.getPhone();
-            data[i][4] = m.getExerciseType().getName();
-            data[i][5] = m.getRoom().getName();
+            data[i][4] = (m.getExerciseType() != null) ? m.getExerciseType().getName() : "";
+            data[i][5] = (m.getRoom() != null) ? m.getRoom().getName() : "";
+
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(data, columnNames));
     }
 
-// Hiển thị thông báo popup
     public void showMessage(String message) {
         javax.swing.JOptionPane.showMessageDialog(this, message);
     }
 
-// Lấy từ ô tìm kiếm
     public String getSearchKeyword() {
         return txtSearch.getText().trim();
     }
 
-// Xóa trắng form
     public void clearForm() {
         txtId.setText("");
         txtName.setText("");
@@ -342,7 +346,6 @@ public class MemberView extends javax.swing.JFrame {
         cbRoom.setSelectedIndex(-1);
     }
 
-// Đổ dữ liệu từ bảng vào form khi click
     public void fillFormFromSelectedRow(List<Member> list) {
         int row = jTable1.getSelectedRow();
         if (row >= 0 && row < list.size()) {
@@ -373,13 +376,12 @@ public class MemberView extends javax.swing.JFrame {
     }
 
     public void addBackButtonListener(ActionListener listener) {
-        jButton1.addActionListener(listener); // nút "Quay lại"
+        jButton1.addActionListener(listener); 
     }
 
     public void addTableSelectionListener(ListSelectionListener listener) {
         jTable1.getSelectionModel().addListSelectionListener(listener);
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;

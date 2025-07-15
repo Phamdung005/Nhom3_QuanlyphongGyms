@@ -41,34 +41,36 @@ public class MemberController {
     }
 
     private void loadData() {
-        try {
-            MemberXML wrapper = (MemberXML) FileUtils.readXMLFile("Member.xml", MemberXML.class);
-            if (wrapper != null && wrapper.getMember() != null) {
-                managerMembers.setMemberList(wrapper.getMember()); // ✅ đã sửa đúng
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    try {
+        MemberXML wrapper = (MemberXML) FileUtils.readXMLFile("Member.xml", MemberXML.class);
+        if (wrapper != null && wrapper.getMember() != null) {
+            managerMembers.setMemberList(wrapper.getMember());
         }
-
-        // Load phòng tập & loại hình nếu có
-        try {
-            RoomXML roomWrapper = (RoomXML) FileUtils.readXMLFile("Room.xml", RoomXML.class);
-            if (roomWrapper != null && roomWrapper.getRoom() != null) {
-                managerRooms.setRoomList(roomWrapper.getRoom());
-            }
-
-            ExerciseTypeXML etWrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
-            if (etWrapper != null && etWrapper.getExerciseTypes() != null) {
-                managerExerciseTypes.setExerciseTypes(etWrapper.getExerciseTypes());
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+
+    try {
+        RoomXML roomWrapper = (RoomXML) FileUtils.readXMLFile("Room.xml", RoomXML.class);
+        if (roomWrapper != null && roomWrapper.getRoom() != null) {
+            managerRooms.setRoomList(roomWrapper.getRoom());
+        }
+
+        ExerciseTypeXML etWrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
+        if (etWrapper != null && etWrapper.getExerciseTypes() != null) {
+            managerExerciseTypes.setExerciseTypes(etWrapper.getExerciseTypes());
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+
+    updateComboBoxes();
+    }
+
 
     private void saveData() {
         MemberXML wrapper = new MemberXML();
-        wrapper.setMember(managerMembers.getMemberList()); // ✅ đã sửa đúng
+        wrapper.setMember(managerMembers.getMemberList()); 
         FileUtils.writeXMLtoFile("Member.xml", wrapper);
     }
 

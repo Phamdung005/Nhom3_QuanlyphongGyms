@@ -94,6 +94,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\MemberController$EditMemberListen
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$StatisticViewListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\TrainerController.class
+com\mycompany\nhom3_quanlyphonggyms\entity\TrainerXML.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$25.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$9.class

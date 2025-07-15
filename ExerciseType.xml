@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<exerciseTypes>
+    <exerciseType>
+        <id>22008192</id>
+        <name>GYM</name>
+        <description>aaaaaaaaaaaaaaa</description>
+    </exerciseType>
+    <exerciseType>
+        <id>22008193</id>
+        <name>YOGA</name>
+        <description>aaaaaaaaaaaaaaa</description>
+    </exerciseType>
+    <exerciseType>
+        <id>22008194</id>
+        <name>TAEWONDO</name>
+        <description>aaaaaaaaaaaaaaa</description>
+    </exerciseType>
+    <exerciseType>
+        <id>22008195</id>
+        <name>KARATE</name>
+        <description>aaaaaaaaaaaaaaa</description>
+    </exerciseType>
+</exerciseTypes>

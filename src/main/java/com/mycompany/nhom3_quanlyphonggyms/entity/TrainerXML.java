@@ -7,18 +7,18 @@ package com.mycompany.nhom3_quanlyphonggyms.entity;
 import java.util.List;
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "rooms")
+@XmlRootElement(name = "trainers")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RoomXML {
+public class TrainerXML {
+    @XmlElement(name = "trainer")
+    private List<Trainer> trainer;
 
-    @XmlElement(name = "room")
-    private List<Room> room;
-
-    public List<Room> getRoom() {
-        return room;
+    public List<Trainer> getTrainer() {
+        return trainer;
     }
 
-    public void setRoom(List<Room> room) {
-        this.room = room;
+    public void setTrainer(List<Trainer> trainer) {
+        this.trainer = trainer;
     }
 }
+
