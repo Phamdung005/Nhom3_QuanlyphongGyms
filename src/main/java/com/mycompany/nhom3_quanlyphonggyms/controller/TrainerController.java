@@ -1,6 +1,8 @@
 package com.mycompany.nhom3_quanlyphonggyms.controller;
 
 import com.mycompany.nhom3_quanlyphonggyms.entity.Trainer;
+import com.mycompany.nhom3_quanlyphonggyms.entity.TrainerXML;
+import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.awt.event.*;
@@ -20,6 +22,7 @@ public class TrainerController {
         this.mainView = mainView;
         this.model = (DefaultTableModel) view.getTable().getModel();
         addListeners();
+        loadData();
     }
     private void addListeners() {
         view.getBtnAdd().addActionListener(e -> addTrainer());
@@ -34,6 +37,25 @@ public class TrainerController {
         });
     }
     
+    private void loadData() {
+        try {
+            TrainerXML wrapper = (TrainerXML) FileUtils.readXMLFile("Trainer.xml", TrainerXML.class);
+            if (wrapper != null && wrapper.getTrainerList() != null) {
+                trainerList = wrapper.getTrainerList();
+                for(Trainer t : trainerList) {
+                    model.addRow(new Object[]{t.getId(), t.getName(), t.getExpertise()});
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void saveData() {
+        TrainerXML wrapper = new TrainerXML();
+        wrapper.setTrainerList(trainerList);
+        FileUtils.writeXMLtoFile("Trainer.xml", wrapper);
+    }
 
     private void addTrainer() {
         String id = view.getTextFieldID().getText().trim();
@@ -49,6 +71,7 @@ public class TrainerController {
         trainerList.add(trainer);
         model.addRow(new Object[]{id, name, expertise});
         clearForm();
+        saveData();
     }
 
     private void updateTrainer() {
@@ -68,6 +91,7 @@ public class TrainerController {
         model.setValueAt(id, row, 0);
         model.setValueAt(name, row, 1);
         model.setValueAt(expertise, row, 2);
+        saveData();
         clearForm();
     }
 
@@ -81,6 +105,7 @@ public class TrainerController {
         trainerList.remove(row);
         model.removeRow(row);
         clearForm();
+        saveData();
     }
 
     private void searchTrainer() {

@@ -31,25 +31,15 @@
             <name>đsfds</name>
             <capacity>0</capacity>
         </room>
+        <trainer>
+            <id>23224</id>
+            <name>đhhhd</name>
+            <expertise>nnnn</expertise>
+            <phone></phone>
+        </trainer>
     </member>
     <member>
         <id>3246</id>
-        <name>ewr</name>
-        <dob>10/08/2005</dob>
-        <phone>234234236</phone>
-        <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
-    </member>
-    <member>
-        <id>32465</id>
         <name>ewr</name>
         <dob>10/08/2005</dob>
         <phone>234234236</phone>

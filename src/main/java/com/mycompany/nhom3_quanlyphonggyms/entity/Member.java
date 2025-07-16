@@ -16,17 +16,21 @@ public class Member {
     @XmlElement(name = "room")
     private Room room;
 
+    @XmlElement(name = "trainer")
+    private Trainer trainer;
 
     public Member() {
+        
     }
 
-    public Member(String id, String name, String dob, String phone, ExerciseType exerciseType, Room room) {
+    public Member(String id, String name, String dob, String phone, ExerciseType exerciseType, Room room, Trainer trainer) {
         this.id = id;
         this.name = name;
         this.dob = dob;
         this.phone = phone;
         this.exerciseType = exerciseType;
         this.room = room;
+        this.trainer = trainer;
     }
 
     public String getId() {
@@ -69,5 +73,12 @@ public class Member {
     }
     public void setRoom(Room room) {
         this.room = room;
+    }
+    public Trainer getTrainer() {
+        return trainer;
+    }
+    
+    public void setTrainer (Trainer trainer) {
+        this.trainer = trainer;
     }
 }

@@ -11,14 +11,14 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TrainerXML {
     @XmlElement(name = "trainer")
-    private List<Trainer> trainer;
+    private List<Trainer> trainerList;
 
-    public List<Trainer> getTrainer() {
-        return trainer;
+    public List<Trainer> getTrainerList() {
+        return trainerList;
     }
 
-    public void setTrainer(List<Trainer> trainer) {
-        this.trainer = trainer;
+    public void setTrainerList(List<Trainer> trainer) {
+        this.trainerList = trainer;
     }
 }
 

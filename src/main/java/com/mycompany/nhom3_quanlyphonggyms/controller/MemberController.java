@@ -3,6 +3,7 @@ package com.mycompany.nhom3_quanlyphonggyms.controller;
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerExerciseTypes;
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerMembers;
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerRooms;
+import com.mycompany.nhom3_quanlyphonggyms.action.ManagerTrainers;
 import com.mycompany.nhom3_quanlyphonggyms.entity.*;
 import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
@@ -20,6 +21,7 @@ public class MemberController {
     private ManagerMembers managerMembers;
     private ManagerRooms managerRooms;
     private ManagerExerciseTypes managerExerciseTypes;
+    private ManagerTrainers managerTrainers;
 
     public MemberController(MemberView memberView, MainView mainView) {
         this.memberView = memberView;
@@ -27,6 +29,7 @@ public class MemberController {
         this.managerMembers = new ManagerMembers();
         this.managerRooms = new ManagerRooms();
         this.managerExerciseTypes = new ManagerExerciseTypes();
+        this.managerTrainers = new ManagerTrainers();
 
         this.memberView.addAddMemberListener(new AddMemberListener());
         this.memberView.addEditMemberListener(new EditMemberListener());
@@ -60,6 +63,11 @@ public class MemberController {
         if (etWrapper != null && etWrapper.getExerciseTypes() != null) {
             managerExerciseTypes.setExerciseTypes(etWrapper.getExerciseTypes());
         }
+        
+        TrainerXML trainerWrapper = (TrainerXML) FileUtils.readXMLFile("Trainer.xml", TrainerXML.class);
+        if(trainerWrapper != null && trainerWrapper.getTrainerList() != null) {
+            managerTrainers.setTrainerList(trainerWrapper.getTrainerList());
+        }
     } catch (Exception ex) {
         ex.printStackTrace();
     }
@@ -77,6 +85,7 @@ public class MemberController {
     private void updateComboBoxes() {
         memberView.setRoomComboBox(managerRooms.getRoomList());
         memberView.setExerciseTypeComboBox(managerExerciseTypes.getExerciseTypes());
+        memberView.setTrainerComboBox(managerTrainers.getTrainerList());
     }
 
     private void showMemberList() {

@@ -24,6 +24,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$11.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$6.class
+com\mycompany\nhom3_quanlyphonggyms\view\MemberView$3.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$ListResidentsSelectionListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$22.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$SearchResidentViewListener.class
@@ -33,6 +34,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$12.class
 com\mycompany\nhom3_quanlyphonggyms\view\MemberView$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$3.class
 com\mycompany\nhom3_quanlyphonggyms\QuanLyDoiTuong\QuanLyPhongGyms.class
+com\mycompany\nhom3_quanlyphonggyms\action\ManagerTrainers.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$SortSpecialPersonNameListener.class
