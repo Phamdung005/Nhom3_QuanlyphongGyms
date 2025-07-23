@@ -5,7 +5,11 @@
 package com.mycompany.nhom3_quanlyphonggyms.view;
 
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
+import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
+import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
@@ -20,8 +24,25 @@ public class ExerciseTypeView extends javax.swing.JFrame {
     /**
      * Creates new form ExerciseTypeView
      */
+    private List<ExerciseType> exerciseTypeList = new  ArrayList<>();
+    
+   private void loadExerciseTypes() {
+       
+       ExerciseTypeXML data = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
+       if (data != null && data.getExerciseTypes() != null) {
+           exerciseTypeList = data.getExerciseTypes();
+           loadTable(exerciseTypeList);
+       } else {
+           exerciseTypeList = new ArrayList<>();
+       }
+   }
+    
+    private void loadTable(List<ExerciseType> List) {
+        showExerciseTypeList(List);
+    }
     public ExerciseTypeView() {
         initComponents();
+        loadExerciseTypes();
     }
 
     /**
@@ -35,6 +56,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
+        cbSort = new javax.swing.JComboBox<>();
         lblId = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
@@ -60,19 +82,33 @@ public class ExerciseTypeView extends javax.swing.JFrame {
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnBack.setText("Quay lại");
 
+        cbSort.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp xếp theo", "Mã tăng dần", "Mã giảm dần", "Tên tăng dần", "Tên giảm dần" }));
+        cbSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSortActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(cbSort, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(129, 129, 129)
+                .addComponent(cbSort, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96))
         );
@@ -198,6 +234,31 @@ public class ExerciseTypeView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSortActionPerformed
+        // TODO add your handling code here:
+        if (exerciseTypeList == null || exerciseTypeList.isEmpty()) return;
+        
+        int selectedIndex = cbSort.getSelectedIndex();
+        List<ExerciseType> sortedList = new ArrayList<>(exerciseTypeList);
+        switch (selectedIndex) {
+            case 1:
+                sortedList.sort(Comparator.comparing(ExerciseType::getId));
+                break;
+            case 2: 
+                sortedList.sort(Comparator.comparing(ExerciseType::getId).reversed());
+                break;
+            case 3:
+                sortedList.sort(Comparator.comparing(ExerciseType::getName));
+                break;
+            case 4:
+                sortedList.sort(Comparator.comparing(ExerciseType::getName).reversed());
+                break;
+            default:
+                return;
+        }
+        loadTable(sortedList);
+    }//GEN-LAST:event_cbSortActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,6 +375,7 @@ public String getSearchKeyword() {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JComboBox<String> cbSort;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

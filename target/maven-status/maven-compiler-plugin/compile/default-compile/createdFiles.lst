@@ -41,6 +41,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$SortSpeci
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$CancelDialogSearchSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\MainController$ChooseRoomListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\MainController$ChooseExerciseTypeListener.class
+com\mycompany\nhom3_quanlyphonggyms\view\ExerciseTypeView$2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$DeleteSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\utils\FileUtils.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$7.class

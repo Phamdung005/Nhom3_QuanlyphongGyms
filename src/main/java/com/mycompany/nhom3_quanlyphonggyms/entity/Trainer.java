@@ -11,19 +11,21 @@ public class Trainer {
     private String name;
     private String expertise;
     private String phone;
+    private String dob;
 
     public Trainer() {
     }
 
-    public Trainer(String id, String name, String expertise, String phone) {
+    public Trainer(String id, String name, String expertise, String phone, String dob) {
         this.id = id;
         this.name = name;
         this.expertise = expertise;
         this.phone = phone;
+        this.dob = dob;
     }
 
     public Trainer(String id, String name, String expertise) {
-        this(id, name, expertise, "");
+        this(id, name, expertise, "", "");
     }
 
     public String getId() { return id; }
@@ -38,8 +40,17 @@ public class Trainer {
     public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
     
+    public String getDob() {
+        return dob;
+    }
+    
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+    
     @Override
     public String toString() {
         return name;
     }
 }
+

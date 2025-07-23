@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <members>
     <member>
-        <id>2132321</id>
+        <id>324234234</id>
         <name>dũng</name>
-        <dob>10/09/2006</dob>
+        <dob>10/08/2005</dob>
         <phone>0396382041</phone>
         <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
-    </member>
-    <member>
-        <id>324324</id>
-        <name>234re</name>
-        <dob>234324</dob>
-        <phone>32423432</phone>
-        <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
+            <id>22008192</id>
+            <name>GYM</name>
             <description>aaaaaaaaaaaaaaa</description>
         </exerciseType>
         <room>
@@ -37,69 +21,5 @@
             <expertise>nnnn</expertise>
             <phone></phone>
         </trainer>
-    </member>
-    <member>
-        <id>3246</id>
-        <name>ewr</name>
-        <dob>10/08/2005</dob>
-        <phone>234234236</phone>
-        <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
-    </member>
-    <member>
-        <id>1100927</id>
-        <name>Phạm Văn Tiến Dũng</name>
-        <dob>10/01/2001</dob>
-        <phone>0396667261</phone>
-        <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
-    </member>
-    <member>
-        <id>881728</id>
-        <name>dunhh</name>
-        <dob>12/12/2002</dob>
-        <phone>009928726653</phone>
-        <exerciseType>
-            <id>22008193</id>
-            <name>YOGA</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
-    </member>
-    <member>
-        <id>21233111</id>
-        <name>ssss</name>
-        <dob>23321</dob>
-        <phone>0090299932</phone>
-        <exerciseType>
-            <id>22008194</id>
-            <name>TAEWONDO</name>
-            <description>aaaaaaaaaaaaaaa</description>
-        </exerciseType>
-        <room>
-            <id></id>
-            <name>đsfds</name>
-            <capacity>0</capacity>
-        </room>
     </member>
 </members>

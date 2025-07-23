@@ -12,4 +12,18 @@
         <expertise>w</expertise>
         <phone></phone>
     </trainer>
+    <trainer>
+        <id>123</id>
+        <name>hoàng</name>
+        <expertise>Gym</expertise>
+        <phone>hoàng</phone>
+        <dob>10/08/2005</dob>
+    </trainer>
+    <trainer>
+        <id>220</id>
+        <name>hưng</name>
+        <expertise>TAEWONDO</expertise>
+        <phone>0998773552</phone>
+        <dob>10/08/2000</dob>
+    </trainer>
 </trainers>
