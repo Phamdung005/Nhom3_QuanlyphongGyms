@@ -6,11 +6,15 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.TrainerXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import static javax.xml.bind.DatatypeConverter.parseDate;
 
 public class TrainerController {
     private MainView mainView;
@@ -37,6 +41,65 @@ public class TrainerController {
             view.dispose();
             mainView.setVisible(true);
         });
+        view.getSortComboBox().addActionListener(e -> sortTrainerList());
+    }
+    
+    private void sortTrainerList() {
+        int selectedIndex = view.getSortComboBox().getSelectedIndex();
+        
+        switch (selectedIndex) {
+            case 1:
+                trainerList.sort((m1, m2) -> m1.getId().compareToIgnoreCase(m2.getId()));
+                break;
+            case 2:
+                trainerList.sort((m1, m2) -> m2.getId().compareToIgnoreCase(m1.getId()));
+                break;
+            case 3:
+                trainerList.sort(Comparator.comparing(Trainer::getName, String.CASE_INSENSITIVE_ORDER));
+                break;
+            case 4:
+                trainerList.sort((a, b) -> b.getName().compareToIgnoreCase(a.getName()));
+                break;
+            case 5: 
+                trainerList.sort((m1, m2) -> 
+                parseDate(m1.getDob()).compareTo(parseDate(m2.getDob()))
+                );
+                break;
+            case 6: 
+                trainerList.sort((m1, m2) -> 
+                parseDate(m2.getDob()).compareTo(parseDate(m1.getDob()))
+                );
+                break;
+            case 7:
+                trainerList.sort(Comparator.comparing(Trainer::getExpertise, String.CASE_INSENSITIVE_ORDER));
+                break;
+            default:
+                return;
+        }
+        
+        refreshTable();
+    }
+    
+
+    
+    
+    
+    
+    
+    private LocalDate parseDate(String dob) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            return LocalDate.parse(dob, formatter);
+        } catch (Exception e) {
+            return LocalDate.MIN; 
+        }
+    }
+    
+    private void refreshTable() {
+        model.setRowCount(0);
+        for(Trainer t : trainerList) {
+            model.addRow(new Object[]{t.getId(), t.getName(), t.getExpertise(), t.getPhone(), t.getDob()});
+        }
     }
 
     private void loadData() {

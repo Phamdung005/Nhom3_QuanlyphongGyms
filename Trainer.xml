@@ -2,28 +2,30 @@
 <trainers>
     <trainer>
         <id>23224</id>
-        <name>đhhhd</name>
-        <expertise>nnnn</expertise>
-        <phone></phone>
+        <name>dhhhd</name>
+        <expertise>GYM</expertise>
+        <phone>234234234</phone>
+        <dob>12005/10/08</dob>
     </trainer>
     <trainer>
         <id>bbvbv</id>
         <name>w</name>
-        <expertise>w</expertise>
-        <phone></phone>
-    </trainer>
-    <trainer>
-        <id>123</id>
-        <name>hoàng</name>
-        <expertise>Gym</expertise>
-        <phone>hoàng</phone>
-        <dob>10/08/2005</dob>
+        <expertise>GYM</expertise>
+        <phone>32423423</phone>
+        <dob>1999/12/20</dob>
     </trainer>
     <trainer>
         <id>220</id>
         <name>hưng</name>
         <expertise>TAEWONDO</expertise>
         <phone>0998773552</phone>
-        <dob>10/08/2000</dob>
+        <dob>2000/10/08</dob>
+    </trainer>
+    <trainer>
+        <id>123</id>
+        <name>hoàng</name>
+        <expertise>GYM</expertise>
+        <phone>2174983894</phone>
+        <dob>1999/12/11</dob>
     </trainer>
 </trainers>

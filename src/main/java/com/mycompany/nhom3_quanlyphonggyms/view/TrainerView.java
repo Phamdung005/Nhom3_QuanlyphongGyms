@@ -5,6 +5,7 @@
 package com.mycompany.nhom3_quanlyphonggyms.view;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Trainer;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -56,6 +57,7 @@ public class TrainerView extends javax.swing.JFrame {
         jTableTrainer = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
+        cbSortBy = new javax.swing.JComboBox<>();
         lblPhone = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
         lblDob = new javax.swing.JLabel();
@@ -145,18 +147,26 @@ public class TrainerView extends javax.swing.JFrame {
             }
         });
 
+        cbSortBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp xếp", "Mã (tăng dần)", "Mã (giảm dần)", "Họ tên (A - Z)", "Họ tên (Z - A)", "Ngày sinh (cũ - mới)", "Ngày sinh (mới - cũ)", "Loại hình", " ", " " }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cbSortBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(144, 144, 144)
+                .addComponent(cbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
@@ -439,7 +449,12 @@ public class TrainerView extends javax.swing.JFrame {
     public JTextField getTextFieldSearch() {
         return jTextFieldSearch;
     }
-    
+    public int getSelectedSortIndex() {
+        return cbSortBy.getSelectedIndex();
+    }
+    public JComboBox<String> getSortComboBox() {
+        return cbSortBy;
+    }
     public JTextField getTextFieldPhone() {
         return txtPhone;
     }
@@ -459,6 +474,7 @@ public class TrainerView extends javax.swing.JFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cbExerciseType;
+    private javax.swing.JComboBox<String> cbSortBy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
