@@ -13,7 +13,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import static javax.xml.bind.DatatypeConverter.parseDate;
 
 public class TrainerController {
@@ -80,11 +83,25 @@ public class TrainerController {
         refreshTable();
     }
     
-
-    
-    
-    
-    
+    private void updateStatisticsLabel() {
+        int total = trainerList.size();
+        Map<String, Integer> expertiseCount = new HashMap<>();
+        
+        for (Trainer t : trainerList) {
+            String expertise = t.getExpertise();
+            expertiseCount.put(expertise, expertiseCount.getOrDefault(expertise, 0) + 1);
+        }
+        StringBuilder stats = new StringBuilder();
+        stats.append("TỔNG SỐ HUẤN LUYỆN VIÊN: ").append(total).append("\n");
+        stats.append("SỐ LƯỢNG THEO CHUYÊN MÔN: \n");
+        
+        for(Map.Entry<String, Integer> entry : expertiseCount.entrySet()) {
+            stats.append(" - ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+        
+        view.getTxtStats().setText(stats.toString());
+        
+    }
     
     private LocalDate parseDate(String dob) {
         try {
@@ -114,6 +131,7 @@ public class TrainerController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        updateStatisticsLabel();
     }
     private void loadExerciseTypes() {
         ExerciseTypeXML exerciseWrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
@@ -146,6 +164,7 @@ public class TrainerController {
         model.addRow(new Object[]{id, name, expertise, phone, dob});
         clearForm();
         saveData();
+        updateStatisticsLabel();
     }
 
     private void updateTrainer() {
@@ -172,6 +191,7 @@ public class TrainerController {
 
         clearForm();
         saveData();
+        updateStatisticsLabel();
     }
 
     private void deleteTrainer() {
@@ -185,6 +205,7 @@ public class TrainerController {
         model.removeRow(row);
         clearForm();
         saveData();
+        updateStatisticsLabel();
     }
 
     private void searchTrainer() {

@@ -10,6 +10,7 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.Room;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Trainer;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.event.ListSelectionListener;
 
 /**
@@ -40,6 +41,7 @@ public class MemberView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         cbSortBy = new javax.swing.JComboBox<>();
+        lblStatistics = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
@@ -79,6 +81,11 @@ public class MemberView extends javax.swing.JFrame {
             }
         });
 
+        lblStatistics.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblStatistics.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblStatistics.setText("Thống kê học viên\n");
+        lblStatistics.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -87,14 +94,17 @@ public class MemberView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(cbSortBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cbSortBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblStatistics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addGap(62, 62, 62)
                 .addComponent(cbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113)
+                .addComponent(lblStatistics, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
@@ -455,6 +465,10 @@ public class MemberView extends javax.swing.JFrame {
     public void addSortMemberListener(ActionListener listener) {
         cbSortBy.addActionListener(listener);
     }
+    
+    public JLabel getStatisticsLabel() {
+        return lblStatistics;
+    }
 
     public void addBackButtonListener(ActionListener listener) {
         jButton1.addActionListener(listener); 
@@ -484,6 +498,7 @@ public class MemberView extends javax.swing.JFrame {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblRoom;
+    private javax.swing.JLabel lblStatistics;
     private javax.swing.JLabel lblTrainer;
     private javax.swing.JTextField txtDob;
     private javax.swing.JTextField txtId;

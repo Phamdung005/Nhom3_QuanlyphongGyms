@@ -12,7 +12,9 @@ import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -92,7 +94,9 @@ public class MemberController {
     }
 
     private void showMemberList() {
-        memberView.showMemberList(managerMembers.getMemberList());
+        List<Member> members = managerMembers.getMemberList();
+        memberView.showMemberList(members);
+        updateStatisticsLabel(members);
     }
 
     class AddMemberListener implements ActionListener {
@@ -213,5 +217,24 @@ public class MemberController {
                     break;
             }
         }
+    }
+    
+    public void updateStatisticsLabel(List<Member> members) {
+        int total = members.size();
+        Map<String, Integer> typeCount = new HashMap<>();
+
+        for (Member m : members) {
+            String type = (m.getExerciseType() != null) ? m.getExerciseType().getName() : "Không xác định";
+            typeCount.put(type, typeCount.getOrDefault(type, 0) + 1);
+        }
+
+        StringBuilder stats = new StringBuilder();
+        stats.append("TỔNG SỐ HỌC VIÊN: ").append(total).append("\nSỐ LƯỢNG THEO LOẠI HÌNH:\n");
+
+        for (Map.Entry<String, Integer> entry : typeCount.entrySet()) {
+            stats.append(" - ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+
+        memberView.getStatisticsLabel().setText("<html>" + stats.toString().replaceAll("\n", "<br>") + "</html>");
     }
 }

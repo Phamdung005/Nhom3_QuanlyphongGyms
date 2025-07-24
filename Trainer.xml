@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <trainers>
     <trainer>
-        <id>23224</id>
-        <name>dhhhd</name>
+        <id>123</id>
+        <name>hoàng</name>
         <expertise>GYM</expertise>
-        <phone>234234234</phone>
-        <dob>12005/10/08</dob>
-    </trainer>
-    <trainer>
-        <id>bbvbv</id>
-        <name>w</name>
-        <expertise>GYM</expertise>
-        <phone>32423423</phone>
-        <dob>1999/12/20</dob>
+        <phone>2174983894</phone>
+        <dob>1999/12/11</dob>
     </trainer>
     <trainer>
         <id>220</id>
@@ -22,10 +15,10 @@
         <dob>2000/10/08</dob>
     </trainer>
     <trainer>
-        <id>123</id>
-        <name>hoàng</name>
+        <id>23224</id>
+        <name>dhhhd</name>
         <expertise>GYM</expertise>
-        <phone>2174983894</phone>
-        <dob>1999/12/11</dob>
+        <phone>234234234</phone>
+        <dob>12005/10/08</dob>
     </trainer>
 </trainers>

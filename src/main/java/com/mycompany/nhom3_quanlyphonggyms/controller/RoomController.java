@@ -72,15 +72,15 @@ public class RoomController {
         view.addSortByCreatedAtListener(new SortByCreatedAtListener());
     }
     
-    
-    
     public void showRoomView() {
         System.out.println(">>> MỞ GIAO DIỆN PHÒNG TẬP <<<");
         loadRoomListFromXML();
-        roomView.showRoomList(managerRooms.getRoomList());
-        roomView.showRoomCount(managerRooms.getRoomList());
+        List<Room> list = managerRooms.getRoomList();
+        roomView.showRoomList(list);
+        roomView.showRoomCount(list);  
         roomView.setVisible(true);
     }
+    
     
     class BackButtonListener implements ActionListener {
         @Override

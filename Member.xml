@@ -66,4 +66,27 @@
             <phone></phone>
         </trainer>
     </member>
+    <member>
+        <id>M04</id>
+        <name>Nguyễn văn D</name>
+        <dob>2005/06/10</dob>
+        <phone>098328978732</phone>
+        <exerciseType>
+            <id>22008195</id>
+            <name>KARATE</name>
+            <description>aaaaaaaaaaaaaaa</description>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>đsfds</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
+        </trainer>
+    </member>
 </members>

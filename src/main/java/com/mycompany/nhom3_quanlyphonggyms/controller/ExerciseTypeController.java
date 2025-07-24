@@ -57,7 +57,9 @@ public class ExerciseTypeController {
     }
 
     private void showList() {
-        view.showExerciseTypeList(manager.getExerciseTypes());
+        List<ExerciseType> list = manager.getExerciseTypes();
+        view.showExerciseTypeList(list);
+        view.showExerciseTypeCount(list.size()); 
     }
 
     class AddListener implements ActionListener {
