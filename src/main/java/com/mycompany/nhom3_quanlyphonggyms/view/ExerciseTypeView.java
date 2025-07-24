@@ -26,7 +26,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
      */
     private List<ExerciseType> exerciseTypeList = new  ArrayList<>();
     
-   private void loadExerciseTypes() {
+    private void loadExerciseTypes() {
        
        ExerciseTypeXML data = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
        if (data != null && data.getExerciseTypes() != null) {
@@ -35,7 +35,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
        } else {
            exerciseTypeList = new ArrayList<>();
        }
-   }
+    }
     
     private void loadTable(List<ExerciseType> List) {
         showExerciseTypeList(List);

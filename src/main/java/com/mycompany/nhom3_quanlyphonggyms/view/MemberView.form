@@ -72,30 +72,35 @@
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="btnSearch" pref="179" max="32767" attributes="0"/>
+                                      <Component id="btnSearch" pref="222" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtSearch" min="-2" pref="418" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="lblRoom" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                                  <Component id="lblDob" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="lblRoom" min="-2" pref="107" max="-2" attributes="0"/>
+                                              <EmptySpace min="57" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="lblPhone" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblPhone" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="lblDob" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtDob" max="32767" attributes="0"/>
-                                          <Component id="cbRoom" pref="206" max="32767" attributes="0"/>
-                                          <Component id="txtPhone" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="cbRoom" pref="206" max="32767" attributes="0"/>
+                                              <Component id="txtPhone" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtDob" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
@@ -169,9 +174,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" pref="206" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButton1" pref="206" max="32767" attributes="0"/>
+                      <Component id="cbSortBy" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -179,6 +187,8 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="cbSortBy" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
@@ -197,6 +207,31 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbSortBy">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="11">
+                <StringItem index="0" value="S&#x1eaf;p x&#x1ebf;p"/>
+                <StringItem index="1" value="M&#xe3; (t&#x103;ng d&#x1ea7;n)"/>
+                <StringItem index="2" value="M&#xe3; (gi&#x1ea3;m d&#x1ea7;n)"/>
+                <StringItem index="3" value="H&#x1ecd; t&#xea;n (A - Z)"/>
+                <StringItem index="4" value="H&#x1ecd; t&#xea;n (Z - A)"/>
+                <StringItem index="5" value="Ng&#xe0;y sinh (c&#x169; - m&#x1edb;i)"/>
+                <StringItem index="6" value="Ng&#xe0;y sinh (m&#x1edb;i - c&#x169;)"/>
+                <StringItem index="7" value="Lo&#x1ea1;i h&#xec;nh"/>
+                <StringItem index="8" value="Hu&#x1ea5;n luy&#x1ec7;n vi&#xea;n"/>
+                <StringItem index="9" value=" "/>
+                <StringItem index="10" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbSortByActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -228,7 +263,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh&#xa;"/>
+        <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh (yy/mm/dd)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDob">
@@ -280,11 +315,18 @@
     <Component class="javax.swing.JComboBox" name="cbRoom">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="11">
+            <StringItem index="0" value="S&#x1eaf;p x&#x1ebf;p"/>
+            <StringItem index="1" value="M&#xe3; (t&#x103;ng d&#x1ea7;n)"/>
+            <StringItem index="2" value="M&#xe3; (gi&#x1ea3;m d&#x1ea7;n)"/>
+            <StringItem index="3" value="H&#x1ecd; t&#xea;n (A - Z)"/>
+            <StringItem index="4" value="H&#x1ecd; t&#xea;n (Z - A)"/>
+            <StringItem index="5" value="Ng&#xe0;y sinh (t&#x103;ng d&#x1ea7;n)"/>
+            <StringItem index="6" value="Ng&#xe0;y sinh (gi&#x1ea3;m d&#x1ea7;n) "/>
+            <StringItem index="7" value="Lo&#x1ea1;i h&#xec;nh"/>
+            <StringItem index="8" value="Hu&#x1ea5;n luy&#x1ec7;n vi&#xea;n"/>
+            <StringItem index="9" value=" "/>
+            <StringItem index="10" value=" "/>
           </StringArray>
         </Property>
       </Properties>

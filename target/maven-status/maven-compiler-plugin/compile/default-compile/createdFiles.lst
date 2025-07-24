@@ -45,6 +45,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\ExerciseTypeView$2.class
 com\mycompany\nhom3_quanlyphonggyms\controller\ResidentController$DeleteSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\utils\FileUtils.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$7.class
+com\mycompany\nhom3_quanlyphonggyms\view\MemberView$4.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$StatisticClearListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$5.class
 com\mycompany\nhom3_quanlyphonggyms\entity\Person.class
@@ -155,6 +156,7 @@ com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$6.class
 com\mycompany\nhom3_quanlyphonggyms\view\MemberView$1.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$17.class
+com\mycompany\nhom3_quanlyphonggyms\controller\MemberController$SortMemberListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\RoomController$DeleteRoomListener.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$EditSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\action\ManagerSpecialPerson$1.class

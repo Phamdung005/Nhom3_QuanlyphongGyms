@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <members>
     <member>
-        <id>324234234</id>
-        <name>dũng</name>
-        <dob>10/08/2005</dob>
-        <phone>0396382041</phone>
+        <id>M01</id>
+        <name>Nuyễn văn A</name>
+        <dob>2000/11/19</dob>
+        <phone>00997287616</phone>
         <exerciseType>
             <id>22008192</id>
             <name>GYM</name>
+            <description>aaaaaaaaaaaaaaa</description>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>đsfds</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>23224</id>
+            <name>đhhhd</name>
+            <expertise>nnnn</expertise>
+            <phone></phone>
+        </trainer>
+    </member>
+    <member>
+        <id>M02</id>
+        <name>Nuyễn văn B</name>
+        <dob>2001/05/10</dob>
+        <phone>00997287600</phone>
+        <exerciseType>
+            <id>22008192</id>
+            <name>GYM</name>
+            <description>aaaaaaaaaaaaaaa</description>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>đsfds</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>23224</id>
+            <name>đhhhd</name>
+            <expertise>nnnn</expertise>
+            <phone></phone>
+        </trainer>
+    </member>
+    <member>
+        <id>M03</id>
+        <name>Nuyễn văn C</name>
+        <dob>2010/05/10</dob>
+        <phone>00997287991</phone>
+        <exerciseType>
+            <id>22008194</id>
+            <name>TAEWONDO</name>
             <description>aaaaaaaaaaaaaaa</description>
         </exerciseType>
         <room>

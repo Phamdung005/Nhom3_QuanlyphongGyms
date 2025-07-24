@@ -10,6 +10,8 @@ import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 
 import java.awt.event.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.*;
 import javax.swing.event.ListSelectionEvent;
@@ -37,6 +39,7 @@ public class MemberController {
         this.memberView.addSearchMemberListener(new SearchMemberListener());
         this.memberView.addBackButtonListener(new BackButtonListener());
         this.memberView.addTableSelectionListener(new MemberSelectionListener());
+        this.memberView.addSortMemberListener(new SortMemberListener());
 
         loadData();
         updateComboBoxes();
@@ -164,6 +167,50 @@ public class MemberController {
                 memberView.fillFormFromSelectedRow(managerMembers.getMemberList());
             } catch (Exception ex) {
                 Logger.getLogger(MemberController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    class SortMemberListener implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int selectedIndex = memberView.getSelectedSortIndex();
+            SortMemberListByIndex(selectedIndex);
+            memberView.showMemberList(managerMembers.getMemberList());
+        }
+        
+        private void SortMemberListByIndex (int index) {
+            List<Member> list = managerMembers.getMemberList();
+            switch (index) {
+                case 1:
+                    list.sort((m1, m2) -> Integer.compare(Integer.parseInt(m1.getId()), Integer.parseInt(m2.getId())));
+                    break;
+                case 2:
+                    list.sort((m1, m2) -> m2.getId().compareToIgnoreCase(m1.getId()));
+                    break;
+                case 3:
+                    list.sort((m1, m2) -> m1.getName().compareToIgnoreCase(m2.getName()));
+                    break;
+                case 4:
+                    list.sort((m1, m2) -> m2.getName().compareToIgnoreCase(m1.getName()));
+                    break;
+                case 5:{
+                    list.sort((m1, m2) -> m1.getDob().compareToIgnoreCase(m2.getDob()));
+                    break;
+                }
+                case 6:
+                    list.sort((m1, m2) -> m2.getDob().compareToIgnoreCase(m1.getDob()));
+                    break;
+
+                case 7: 
+                    list.sort((m1, m2) -> m1.getExerciseType().getName().compareToIgnoreCase(m2.getExerciseType().getName()));
+                    break;
+                case 8:
+                    list.sort((m1, m2) -> m1.getPhone().compareToIgnoreCase(m2.getPhone()));
+                    break;
+                default:
+                    break;
             }
         }
     }

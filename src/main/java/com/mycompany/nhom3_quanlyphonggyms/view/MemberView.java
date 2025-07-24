@@ -39,6 +39,7 @@ public class MemberView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        cbSortBy = new javax.swing.JComboBox<>();
         lblId = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
@@ -71,19 +72,30 @@ public class MemberView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("Quay lại");
 
+        cbSortBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp xếp", "Mã (tăng dần)", "Mã (giảm dần)", "Họ tên (A - Z)", "Họ tên (Z - A)", "Ngày sinh (cũ - mới)", "Ngày sinh (mới - cũ)", "Loại hình", "Huấn luyện viên", " ", " " }));
+        cbSortBy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSortByActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(cbSortBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(151, 151, 151)
+                .addComponent(cbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
         );
@@ -97,7 +109,7 @@ public class MemberView extends javax.swing.JFrame {
         txtName.setText("\n");
 
         lblDob.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDob.setText("Ngày sinh\n");
+        lblDob.setText("Ngày sinh (yy/mm/dd)");
 
         lblPhone.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblPhone.setText("Số điện thoại");
@@ -115,7 +127,7 @@ public class MemberView extends javax.swing.JFrame {
         lblRoom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblRoom.setText("Phòng tập");
 
-        cbRoom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbRoom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp xếp", "Mã (tăng dần)", "Mã (giảm dần)", "Họ tên (A - Z)", "Họ tên (Z - A)", "Ngày sinh (tăng dần)", "Ngày sinh (giảm dần) ", "Loại hình", "Huấn luyện viên", " ", " " }));
         cbRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbRoomActionPerformed(evt);
@@ -200,24 +212,27 @@ public class MemberView extends javax.swing.JFrame {
                                         .addGap(43, 43, 43)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                                        .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lblRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(lblDob))
-                                                .addGap(14, 14, 14))
+                                                .addComponent(lblRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lblPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(lblDob)
+                                                        .addGap(0, 0, Short.MAX_VALUE)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtDob)
-                                            .addComponent(cbRoom, 0, 206, Short.MAX_VALUE)
-                                            .addComponent(txtPhone))
-                                        .addGap(276, 276, 276)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(cbRoom, 0, 206, Short.MAX_VALUE)
+                                                .addComponent(txtPhone))
+                                            .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(272, 272, 272)))
                                 .addGap(130, 130, 130)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -274,6 +289,11 @@ public class MemberView extends javax.swing.JFrame {
     private void cbRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRoomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbRoomActionPerformed
+
+    private void cbSortByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSortByActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cbSortByActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,6 +431,10 @@ public class MemberView extends javax.swing.JFrame {
             cbRoom.setSelectedItem(m.getRoom().getName());
         }
     }
+    
+    public int getSelectedSortIndex() {
+        return cbSortBy.getSelectedIndex();
+    }
 
     public void addAddMemberListener(ActionListener listener) {
         btnAdd.addActionListener(listener);
@@ -426,6 +450,10 @@ public class MemberView extends javax.swing.JFrame {
 
     public void addSearchMemberListener(ActionListener listener) {
         btnSearch.addActionListener(listener);
+    }
+    
+    public void addSortMemberListener(ActionListener listener) {
+        cbSortBy.addActionListener(listener);
     }
 
     public void addBackButtonListener(ActionListener listener) {
@@ -443,6 +471,7 @@ public class MemberView extends javax.swing.JFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbExerciseType;
     private javax.swing.JComboBox<String> cbRoom;
+    private javax.swing.JComboBox<String> cbSortBy;
     private javax.swing.JComboBox<String> cbTrainer;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
