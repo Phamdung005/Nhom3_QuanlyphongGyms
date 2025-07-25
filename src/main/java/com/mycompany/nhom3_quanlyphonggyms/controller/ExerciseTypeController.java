@@ -9,7 +9,11 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
+import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
+import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
+import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 
 import java.awt.event.*;
 import java.util.List;
@@ -22,6 +26,10 @@ public class ExerciseTypeController {
     private ExerciseTypeView view;
     private MainView mainView;
     private ManagerExerciseTypes manager;
+    private TrainerView trainerView;
+    private MemberView memberView;
+    private RoomView roomView;
+    private LoginView loginView;
 
     public ExerciseTypeController(ExerciseTypeView view, MainView mainView) {
         this.view = view;
@@ -34,9 +42,49 @@ public class ExerciseTypeController {
         this.view.addSearchExerciseTypeListener(new SearchListener());
         this.view.addBackButtonListener(new BackListener());
         this.view.addTableSelectionListener(new TableSelectionListener());
+        this.view.addChooseMemberListener(new ChooseMemberListener());
+        this.view.addChooseTrainerListener(new ChooseTrainerListener());
+        this.view.addChooseRoomListener(new ChooseRoomListener());
+        this.view.addDangXuatListener(new ButtonDangXuat());
 
         loadData();
         showList();
+    }
+    
+    class ChooseRoomListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+           roomView = new RoomView();
+           RoomController roomController = new RoomController(roomView, mainView);
+           roomController.showRoomView();
+           view.setVisible(false);
+        }
+    }
+    class ChooseMemberListener implements ActionListener {
+    @Override
+        public void actionPerformed(ActionEvent e) {
+            memberView = new MemberView();
+            MemberController controller = new MemberController(memberView, mainView);
+            memberView.setVisible(true);
+            view.setVisible(false);
+        }
+    }
+    class ChooseTrainerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           trainerView = new TrainerView();
+           TrainerController trainerController = new TrainerController(trainerView, mainView);
+           trainerView.setVisible(true);
+           view.setVisible(false);
+        }
+    }
+    class ButtonDangXuat implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            loginView = new LoginView();
+            LoginController controller = new LoginController(loginView);
+            loginView.setVisible(true);
+            view.setVisible(false);
+        }
     }
 
     private void loadData() {

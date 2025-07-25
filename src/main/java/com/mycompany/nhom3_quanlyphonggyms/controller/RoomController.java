@@ -16,7 +16,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import com.mycompany.nhom3_quanlyphonggyms.entity.RoomXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
+import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
+import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
+import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.io.InputStream;
 
 
@@ -29,9 +33,13 @@ public class RoomController {
     private RoomView roomView;
     private ManagerRooms managerRooms;
     private MainView mainView;
+    private TrainerView trainerView;
+    private MemberView memberView;
+    private ExerciseTypeView exerciseTypeView;
+    private LoginView loginView;
 
     RoomController(RoomView roomView) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
 
@@ -70,10 +78,50 @@ public class RoomController {
         view.addSortByCapacityAscListener(new SortByCapacityAscListener());
         view.addSortByCapacityDescListener(new SortByCapacityDescListener());
         view.addSortByCreatedAtListener(new SortByCreatedAtListener());
+        view.addChooseTrainerListener(new ChooseTrainerListener());
+        view.addChooseMemberListener(new ChooseMemberListener());
+        view.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
+        view.addDangXuatListener(new ButtonDangXuat());
+    }
+    
+    class ChooseTrainerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           trainerView = new TrainerView();
+           TrainerController trainerController = new TrainerController(trainerView, mainView);
+           trainerView.setVisible(true);
+           roomView.setVisible(false);
+        }
+    }
+    class ChooseMemberListener implements ActionListener {
+    @Override
+        public void actionPerformed(ActionEvent e) {
+            memberView = new MemberView();
+            MemberController controller = new MemberController(memberView, mainView);
+            memberView.setVisible(true);
+            roomView.setVisible(false);
+        }
+    }
+    class ChooseExerciseTypeListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            exerciseTypeView = new ExerciseTypeView();
+            ExerciseTypeController controller = new ExerciseTypeController(exerciseTypeView, mainView);
+            exerciseTypeView.setVisible(true);
+            roomView.setVisible(false);
+        }
+    }
+    class ButtonDangXuat implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            loginView = new LoginView();
+            LoginController controller = new LoginController(loginView);
+            loginView.setVisible(true);
+            roomView.setVisible(false);
+        }
     }
     
     public void showRoomView() {
-        System.out.println(">>> MỞ GIAO DIỆN PHÒNG TẬP <<<");
         loadRoomListFromXML();
         List<Room> list = managerRooms.getRoomList();
         roomView.showRoomList(list);

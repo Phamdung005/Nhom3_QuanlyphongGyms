@@ -4,8 +4,14 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Trainer;
 import com.mycompany.nhom3_quanlyphonggyms.entity.TrainerXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
+import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
+import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
+import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
 import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -24,6 +30,10 @@ public class TrainerController {
     private TrainerView view;
     private List<Trainer> trainerList = new ArrayList<>();
     private DefaultTableModel model;
+    private LoginView loginView;
+    private MemberView memberView;
+    private ExerciseTypeView exerciseTypeView;
+    private RoomView roomView;
 
     public TrainerController(TrainerView view, MainView mainView) {
         this.view = view;
@@ -32,6 +42,10 @@ public class TrainerController {
         addListeners();
         loadExerciseTypes();
         loadData();
+        this.loginView = new LoginView();
+        this.memberView = new MemberView();
+        this.exerciseTypeView = new ExerciseTypeView();
+        this.roomView = new RoomView();
     }
 
     private void addListeners() {
@@ -43,6 +57,30 @@ public class TrainerController {
         view.getBtnBack().addActionListener(e -> {
             view.dispose();
             mainView.setVisible(true);
+        });
+        view.getBtnChooseExerciseType().addActionListener(e -> {
+            ExerciseTypeView etv = new ExerciseTypeView();
+            ExerciseTypeController etc = new ExerciseTypeController(etv, mainView);
+            view.dispose();
+            etv.setVisible(true);
+        });
+        view.getBtnChooseMember().addActionListener(e -> {
+            MemberView mv = new MemberView();
+            MemberController mc = new MemberController(mv, mainView);
+            view.dispose();
+            mv.setVisible(true);
+        });
+        view.getBtnChooseRoom().addActionListener(e -> {
+            RoomView rv = new RoomView();
+            RoomController rc = new RoomController(rv, mainView);
+            view.dispose();
+            rv.setVisible(true);
+        });
+        view.getBtnDangXuat().addActionListener(e -> {
+            LoginView lv = new LoginView();
+            LoginController lc = new LoginController(lv);
+            view.dispose();
+            lv.setVisible(true);
         });
         view.getSortComboBox().addActionListener(e -> sortTrainerList());
     }
@@ -245,4 +283,5 @@ public class TrainerController {
         }
         return 0;
     }
+    
 }

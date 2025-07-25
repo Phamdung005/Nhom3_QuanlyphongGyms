@@ -40,13 +40,15 @@ public class MainController
         view.addChooseRoomListener(new ChooseRoomListener());
         view.addChooseMemberListener(new ChooseMemberListener());
         view.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
+        view.addDangXuatListener(new ButtonDangXuat());
         this.exerciseTypeView = new ExerciseTypeView();
+        this.loginView = new LoginView();
         this.exerciseTypeController = new ExerciseTypeController(exerciseTypeView, mainView);
 
-        this.exerciseTypes = exerciseTypeController.getExerciseTypeList(); // ✅ Lưu vào biến thành viên
+        this.exerciseTypes = exerciseTypeController.getExerciseTypeList(); 
 
         this.memberView = new MemberView();
-        this.memberController = new MemberController(memberView, mainView, exerciseTypes);
+        this.memberController = new MemberController(memberView, mainView);
     }
 
     public void showMainView() 
@@ -65,7 +67,7 @@ public class MainController
     @Override
         public void actionPerformed(ActionEvent e) {
             memberView = new MemberView();
-            MemberController controller = new MemberController(memberView, mainView, exerciseTypes);
+            MemberController controller = new MemberController(memberView, mainView);
             memberView.setVisible(true);
             mainView.setVisible(false);
         }
@@ -80,8 +82,15 @@ public class MainController
             mainView.setVisible(false);
         }
     }
-    
+    class ButtonDangXuat implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            loginView = new LoginView();
+            LoginController controller = new LoginController(loginView);
+            loginView.setVisible(true);
+            mainView.setVisible(false);
+        }
+    }
     
 
-    
 }

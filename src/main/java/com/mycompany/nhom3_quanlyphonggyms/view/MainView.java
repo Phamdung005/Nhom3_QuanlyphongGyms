@@ -47,6 +47,7 @@ public class MainView extends javax.swing.JFrame {
         managerMembers = new ManagerMembers();
         managerTrainers = new ManagerTrainers();
         showDashboardStats();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -65,6 +66,7 @@ public class MainView extends javax.swing.JFrame {
         btnChooseRoom = new javax.swing.JButton();
         btnChooseMember = new javax.swing.JButton();
         btnDashboard = new javax.swing.JButton();
+        btnDangXuat = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblTotalRooms = new javax.swing.JLabel();
         lblTotalTrainers = new javax.swing.JLabel();
@@ -81,13 +83,13 @@ public class MainView extends javax.swing.JFrame {
         jLabel3.setText("<html>Quản lý tình hình dân cư<br> ");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1150, 680));
+        setResizable(false);
         setSize(new java.awt.Dimension(1130, 680));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(180, 180, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(280, 680));
 
-        btnChooseExerciseType.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseExerciseType.setBackground(new java.awt.Color(88, 86, 128));
         btnChooseExerciseType.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnChooseExerciseType.setForeground(new java.awt.Color(255, 255, 255));
         btnChooseExerciseType.setText("<html><div style='text-align: center;'>Quản lý loại hình<br></div>");
@@ -101,7 +103,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        btnChooseTrainer.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseTrainer.setBackground(new java.awt.Color(88, 86, 128));
         btnChooseTrainer.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnChooseTrainer.setForeground(new java.awt.Color(255, 255, 255));
         btnChooseTrainer.setText("Quản lý huấn luyện viên");
@@ -111,7 +113,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        btnChooseRoom.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseRoom.setBackground(new java.awt.Color(88, 86, 128));
         btnChooseRoom.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnChooseRoom.setForeground(new java.awt.Color(255, 255, 255));
         btnChooseRoom.setText("<html><div style='text-align: center;'>Quản lý phòng tập<br></div>");
@@ -121,7 +123,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        btnChooseMember.setBackground(new java.awt.Color(0, 0, 102));
+        btnChooseMember.setBackground(new java.awt.Color(88, 86, 128));
         btnChooseMember.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnChooseMember.setForeground(new java.awt.Color(255, 255, 255));
         btnChooseMember.setText("<html><div style='text-align: center;'>Quản Lý học viên<br></div>");
@@ -136,10 +138,26 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        btnDashboard.setBackground(new java.awt.Color(0, 0, 102));
+        btnDashboard.setBackground(new java.awt.Color(88, 86, 128));
         btnDashboard.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
         btnDashboard.setText("Thống kê");
+
+        btnDangXuat.setBackground(new java.awt.Color(88, 86, 128));
+        btnDangXuat.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnDangXuat.setForeground(new java.awt.Color(255, 255, 255));
+        btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/LogOut.png"))); // NOI18N
+        btnDangXuat.setText("<html><div style='text-align: center;'>Đăng xuất<br></div>");
+        btnDangXuat.setToolTipText("");
+        btnDangXuat.setBorder(null);
+        btnDangXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDangXuat.setPreferredSize(new java.awt.Dimension(250, 40));
+        btnDangXuat.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDangXuatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,48 +169,56 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
+                .addGap(42, 42, 42)
                 .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(28, 28, 28)
                 .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(38, 38, 38)
                 .addComponent(btnChooseTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(50, 50, 50)
                 .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(40, 40, 40)
                 .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(850, 680));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1130, 680));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1130, 680));
 
         lblTotalRooms.setBackground(new java.awt.Color(204, 0, 204));
         lblTotalRooms.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalRooms.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotalRooms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalRooms.setText("ROOM\n\n");
         lblTotalRooms.setOpaque(true);
 
         lblTotalTrainers.setBackground(new java.awt.Color(0, 153, 204));
         lblTotalTrainers.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalTrainers.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotalTrainers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalTrainers.setText("TRAINER");
         lblTotalTrainers.setOpaque(true);
 
         lblTotalExerciseTypes.setBackground(new java.awt.Color(0, 204, 153));
         lblTotalExerciseTypes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalExerciseTypes.setForeground(new java.awt.Color(255, 255, 255));
-        lblTotalExerciseTypes.setText("EXERCISETYPE\n\n");
+        lblTotalExerciseTypes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTotalExerciseTypes.setText("EXERCISETYPE  ");
         lblTotalExerciseTypes.setOpaque(true);
 
         lblTotalMembers2.setBackground(new java.awt.Color(255, 0, 0));
         lblTotalMembers2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalMembers2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotalMembers2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalMembers2.setText("MEMBER\n");
         lblTotalMembers2.setOpaque(true);
 
@@ -229,25 +255,24 @@ public class MainView extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lblTotalExerciseTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTotalMembers2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(lblTotalExerciseTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))))
+                        .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 63, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTotalMembers2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,19 +283,19 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotalExerciseTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotalMembers2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(197, 197, 197))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -280,16 +305,18 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(843, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 354, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -319,6 +346,10 @@ public class MainView extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_btnChooseTrainerActionPerformed
+
+    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDangXuatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,6 +411,9 @@ public class MainView extends javax.swing.JFrame {
     public void addChooseExerciseTypeListener(ActionListener listener) {
         btnChooseExerciseType.addActionListener(listener);
     }
+    public void addDangXuatListener(ActionListener listener) {
+        btnDangXuat.addActionListener(listener);
+    }
 
     
     
@@ -388,6 +422,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnChooseMember;
     private javax.swing.JButton btnChooseRoom;
     private javax.swing.JButton btnChooseTrainer;
+    private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnDashboard;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

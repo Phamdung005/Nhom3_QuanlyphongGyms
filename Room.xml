@@ -5,4 +5,9 @@
         <name>đsfds</name>
         <capacity>32</capacity>
     </room>
+    <room>
+        <id>222323</id>
+        <name>phòng hà</name>
+        <capacity>122</capacity>
+    </room>
 </rooms>

@@ -9,6 +9,10 @@ import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
+import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
+import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
+import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -26,14 +30,22 @@ public class MemberController {
     private ManagerRooms managerRooms;
     private ManagerExerciseTypes managerExerciseTypes;
     private ManagerTrainers managerTrainers;
-    public MemberController(MemberView memberView, MainView mainView, List<ExerciseType> exerciseTypes) {
+    private RoomView roomView;
+    private ExerciseTypeView exerciseTypeView;
+    private TrainerView trainerView;
+    private LoginView loginView;
+    
+    public MemberController(MemberView memberView, MainView mainView) {
         this.memberView = memberView;
         this.mainView = mainView;
         this.managerMembers = new ManagerMembers();
         this.managerRooms = new ManagerRooms();
         this.managerExerciseTypes = new ManagerExerciseTypes();
-        this.managerExerciseTypes.setExerciseTypes(exerciseTypes); // dùng danh sách từ ngoài
         this.managerTrainers = new ManagerTrainers();
+        this.roomView = new RoomView();
+        this.loginView = new LoginView();
+        this.exerciseTypeView = new ExerciseTypeView();
+        this.trainerView = new TrainerView();
 
         this.memberView.addAddMemberListener(new AddMemberListener());
         this.memberView.addEditMemberListener(new EditMemberListener());
@@ -42,10 +54,50 @@ public class MemberController {
         this.memberView.addBackButtonListener(new BackButtonListener());
         this.memberView.addTableSelectionListener(new MemberSelectionListener());
         this.memberView.addSortMemberListener(new SortMemberListener());
-
+        this.memberView.addChooseTrainerListener(new ChooseTrainerListener());
+        this.memberView.addChooseRoomListener(new ChooseRoomListener());
+        this.memberView.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
+        this.memberView.addDangXuatListener(new ButtonDangXuat());
         loadData();
         updateComboBoxes();
         showMemberList();
+    }
+    class ChooseTrainerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           trainerView = new TrainerView();
+           TrainerController trainerController = new TrainerController(trainerView, mainView);
+           trainerView.setVisible(true);
+           memberView.setVisible(false);
+        }
+    }
+    
+    class ChooseRoomListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           roomView = new RoomView();
+           RoomController roomController = new RoomController(roomView, mainView);
+           roomController.showRoomView();
+           memberView.setVisible(false);
+        }
+    }
+    class ChooseExerciseTypeListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            exerciseTypeView = new ExerciseTypeView();
+            ExerciseTypeController controller = new ExerciseTypeController(exerciseTypeView, mainView);
+            exerciseTypeView.setVisible(true);
+            memberView.setVisible(false);
+        }
+    }
+    class ButtonDangXuat implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            loginView = new LoginView();
+            LoginController controller = new LoginController(loginView);
+            loginView.setVisible(true);
+            memberView.setVisible(false);
+        }
     }
 
     private void loadData() {
