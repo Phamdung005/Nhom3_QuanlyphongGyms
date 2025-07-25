@@ -138,5 +138,16 @@ public class ExerciseTypeController {
             }
         }
     }
+    public List<ExerciseType> getExerciseTypeList() {
+        return manager.getExerciseTypes(); 
+    }
+    
+    public static int getExerciseTypeCount() {
+        ExerciseTypeXML wrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
+        if (wrapper != null && wrapper.getExerciseTypes() != null) {
+            return wrapper.getExerciseTypes().size();
+        }
+        return 0;
+    }
 }
 

@@ -124,6 +124,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\ExerciseTypeController$SearchList
 com\mycompany\nhom3_quanlyphonggyms\controller\ExerciseTypeController$TableSelectionListener.class
 com\mycompany\nhom3_quanlyphonggyms\entity\ExerciseType.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$3.class
+com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$10.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$1.class
 com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$DeleteSpecialPersonListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\RoomView$1.class
@@ -142,6 +143,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$Statistic
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$16.class
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$2.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$7.class
+com\mycompany\nhom3_quanlyphonggyms\view\RoomView$7.class
 com\mycompany\nhom3_quanlyphonggyms\controller\MemberController$MemberSelectionListener.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$6.class
@@ -154,6 +156,7 @@ com\mycompany\nhom3_quanlyphonggyms\controller\SpecialPersonController$UndoListe
 com\mycompany\nhom3_quanlyphonggyms\view\ManagerView$8.class
 com\mycompany\nhom3_quanlyphonggyms\view\TrainerView$6.class
 com\mycompany\nhom3_quanlyphonggyms\view\MemberView$1.class
+com\mycompany\nhom3_quanlyphonggyms\view\RoomView$6.class
 com\mycompany\nhom3_quanlyphonggyms\view\MainView$4.class
 com\mycompany\nhom3_quanlyphonggyms\view\ResidentView$17.class
 com\mycompany\nhom3_quanlyphonggyms\controller\MemberController$SortMemberListener.class

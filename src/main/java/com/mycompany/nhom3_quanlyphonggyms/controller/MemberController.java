@@ -8,7 +8,7 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.*;
 import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
-
+import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -26,13 +26,13 @@ public class MemberController {
     private ManagerRooms managerRooms;
     private ManagerExerciseTypes managerExerciseTypes;
     private ManagerTrainers managerTrainers;
-
-    public MemberController(MemberView memberView, MainView mainView) {
+    public MemberController(MemberView memberView, MainView mainView, List<ExerciseType> exerciseTypes) {
         this.memberView = memberView;
         this.mainView = mainView;
         this.managerMembers = new ManagerMembers();
         this.managerRooms = new ManagerRooms();
         this.managerExerciseTypes = new ManagerExerciseTypes();
+        this.managerExerciseTypes.setExerciseTypes(exerciseTypes); // dùng danh sách từ ngoài
         this.managerTrainers = new ManagerTrainers();
 
         this.memberView.addAddMemberListener(new AddMemberListener());
@@ -128,6 +128,8 @@ public class MemberController {
             }
         }
     }
+    
+    
 
     class DeleteMemberListener implements ActionListener {
         @Override
@@ -236,5 +238,13 @@ public class MemberController {
         }
 
         memberView.getStatisticsLabel().setText("<html>" + stats.toString().replaceAll("\n", "<br>") + "</html>");
+    }
+    
+    public static int getMemberCount() {
+        MemberXML wrapper = (MemberXML) FileUtils.readXMLFile("Member.xml", MemberXML.class);
+        if (wrapper != null && wrapper.getMember() != null) {
+            return wrapper.getMember().size();
+        }
+        return 0;
     }
 }

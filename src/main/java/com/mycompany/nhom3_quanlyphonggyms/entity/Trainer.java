@@ -12,6 +12,7 @@ public class Trainer {
     private String expertise;
     private String phone;
     private String dob;
+    private ExerciseType exerciseType;
 
     public Trainer() {
     }
@@ -43,11 +44,21 @@ public class Trainer {
     public String getDob() {
         return dob;
     }
-    
     public void setDob(String dob) {
         this.dob = dob;
     }
-    
+    public ExerciseType getExerciseType() {
+        return exerciseType;
+    }
+
+    public void setExerciseType(ExerciseType exerciseType) {
+        this.exerciseType = exerciseType;
+        if (exerciseType != null) {
+            this.expertise = exerciseType.getName(); 
+        } else {
+            this.expertise = null;
+        }
+    }
     @Override
     public String toString() {
         return name;

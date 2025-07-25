@@ -81,6 +81,14 @@ public class RoomController {
         roomView.setVisible(true);
     }
     
+    public static int getRoomCount() {
+        RoomXML roomWrapper = (RoomXML) FileUtils.readXMLFile("Room.xml", RoomXML.class);
+        if (roomWrapper != null && roomWrapper.getRoom() != null) {
+            return roomWrapper.getRoom().size();
+        }
+        return 0;
+    }
+    
     
     class BackButtonListener implements ActionListener {
         @Override

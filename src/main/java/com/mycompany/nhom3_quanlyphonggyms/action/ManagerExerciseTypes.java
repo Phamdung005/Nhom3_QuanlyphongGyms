@@ -5,12 +5,25 @@
 package com.mycompany.nhom3_quanlyphonggyms.action;
 
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
+import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 public class ManagerExerciseTypes {
     private List<ExerciseType> exerciseTypes = new ArrayList<>();
+    private static final String DEFAULT_EXERCISE_TYPE_PATH = "exercise_types.xml";
+    
+    public ManagerExerciseTypes() {
+        // Không load ngay, gọi init() sau
+    }
 
+    public void init() {
+        loadFromFile(DEFAULT_EXERCISE_TYPE_PATH);
+    }
+    
     public List<ExerciseType> getExerciseTypes() {
         return exerciseTypes;
     }
@@ -35,6 +48,21 @@ public class ManagerExerciseTypes {
         return exerciseTypes.stream()
                 .filter(t -> t.getName().toLowerCase().contains(keyword.toLowerCase()))
                 .toList();
+    }
+    public List<ExerciseType> getAll() {
+        return exerciseTypes;
+    }
+    
+    public void loadFromFile(String path) {
+        try {
+            File file = new File(path);
+            JAXBContext context = JAXBContext.newInstance(ExerciseTypeXML.class);
+            Unmarshaller um = context.createUnmarshaller();
+            ExerciseTypeXML wrapper = (ExerciseTypeXML) um.unmarshal(file);
+            this.exerciseTypes = wrapper.getExerciseTypes();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

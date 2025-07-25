@@ -237,4 +237,12 @@ public class TrainerController {
         view.getTextFieldDob().setText("");
         view.getTextFieldSearch().setText("");
     }
+    
+    public static int getTrainerCount() {
+        TrainerXML wrapper = (TrainerXML) FileUtils.readXMLFile("Trainer.xml", TrainerXML.class);
+        if (wrapper != null && wrapper.getTrainerList() != null) {
+            return wrapper.getTrainerList().size();
+        }
+        return 0;
+    }
 }

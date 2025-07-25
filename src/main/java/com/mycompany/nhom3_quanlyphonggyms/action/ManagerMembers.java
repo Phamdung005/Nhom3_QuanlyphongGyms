@@ -4,12 +4,23 @@
  */
 package com.mycompany.nhom3_quanlyphonggyms.action;
 
+import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Member;
+import com.mycompany.nhom3_quanlyphonggyms.entity.MemberXML;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 public class ManagerMembers {
     private List<Member> memberList = new ArrayList<>();
+    private static final String DEFAULT_MEMBER_PATH = "members.xml";
+
+    public ManagerMembers() {
+        ManagerExerciseTypes met = new ManagerExerciseTypes();
+        loadFromFile(DEFAULT_MEMBER_PATH, met.getExerciseTypes());
+    }
 
     public List<Member> getMemberList() {
         return memberList;
@@ -43,6 +54,26 @@ public class ManagerMembers {
         return memberList.stream()
                 .filter(m -> m.getName().toLowerCase().contains(keyword.toLowerCase()))
                 .toList();
+    }
+    public void loadFromFile(String path, List<ExerciseType> exerciseTypes) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(MemberXML.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            MemberXML memberXML = (MemberXML) unmarshaller.unmarshal(new File(path));
+            this.memberList = memberXML.getMember();
+
+        // Gán lại ExerciseType từ danh sách hiện có (tránh reference khác)
+            for (Member m : memberList) {
+                for (ExerciseType et : exerciseTypes) {
+                    if (m.getExerciseType() != null && 
+                        et.getId().equals(m.getExerciseType().getId())) {
+                        m.setExerciseType(et);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

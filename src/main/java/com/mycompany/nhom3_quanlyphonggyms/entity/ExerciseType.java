@@ -39,9 +39,22 @@ public class ExerciseType {
     public String getDescription() {
         return description;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        ExerciseType other = (ExerciseType) obj;
+        return id != null && id.equals(other.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
 
     @Override
     public String toString() {
         return name;
     }
+    
 }
