@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <rooms>
     <room>
-        <id>234234</id>
-        <name>đsfds</name>
-        <capacity>32</capacity>
-    </room>
-    <room>
-        <id>222323</id>
-        <name>phòng hà</name>
-        <capacity>122</capacity>
+        <id>1122</id>
+        <name>hát</name>
+        <capacity>1200</capacity>
     </room>
 </rooms>

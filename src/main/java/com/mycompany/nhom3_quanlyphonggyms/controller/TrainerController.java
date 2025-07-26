@@ -13,12 +13,14 @@ import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -189,13 +191,39 @@ public class TrainerController {
         String id = view.getTextFieldID().getText().trim();
         String name = view.getTextFieldName().getText().trim();
         String expertise = view.getTextFieldExpertise().getSelectedItem().toString();
-        String phone = view.getTextFieldPhone().getText().trim(); // Fixed
-        String dob = view.getTextFieldDob().getText().trim();
+        String phone = view.getTextFieldPhone().getText().trim();
+        Date selectedDate = view.getDateChooserDob().getDate();
 
-        if (id.isEmpty() || name.isEmpty() || expertise.isEmpty() || phone.isEmpty() || dob.isEmpty()) {
-            JOptionPane.showMessageDialog(view, "Vui lòng nhập đầy đủ thông tin.");
+        if (id.isEmpty() && name.isEmpty() && 
+            (expertise == null || expertise.trim().isEmpty()) && 
+            phone.isEmpty() && selectedDate == null) {
+            JOptionPane.showMessageDialog(view, "Vui lòng nhập đầy đủ thông tin huấn luyện viên.");
             return;
         }
+
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(view, "Vui lòng nhập mã huấn luyện viên.");
+            return;
+        }
+        if (name.isEmpty()) {
+            JOptionPane.showMessageDialog(view, "Vui lòng nhập tên huấn luyện viên.");
+            return;
+        }
+        if (expertise == null || expertise.trim().isEmpty() || expertise.equals("-- Chọn chuyên môn --")) {
+            JOptionPane.showMessageDialog(view, "Vui lòng chọn chuyên môn.");
+            return;
+        }
+        if (phone.isEmpty()) {
+            JOptionPane.showMessageDialog(view, "Vui lòng nhập số điện thoại.");
+            return;
+        }
+        if (selectedDate == null) {
+            JOptionPane.showMessageDialog(view, "Vui lòng chọn ngày sinh.");
+            return;
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate dobDate = selectedDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        String dob = dobDate.format(formatter);
 
         Trainer trainer = new Trainer(id, name, expertise, phone, dob);
         trainerList.add(trainer);
@@ -216,7 +244,10 @@ public class TrainerController {
         String name = view.getTextFieldName().getText().trim();
         String expertise = view.getTextFieldExpertise().getSelectedItem().toString();
         String phone = view.getTextFieldPhone().getText().trim();
-        String dob = view.getTextFieldDob().getText().trim();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate dobDate = view.getDateChooserDob().getDate()
+        .toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate();
+        String dob = dobDate.format(formatter);
 
         Trainer trainer = new Trainer(id, name, expertise, phone, dob);
         trainerList.set(row, trainer);
@@ -263,7 +294,15 @@ public class TrainerController {
             view.getTextFieldName().setText(model.getValueAt(row, 1).toString());
             view.getTextFieldExpertise().setSelectedItem(model.getValueAt(row, 2).toString());
             view.getTextFieldPhone().setText(model.getValueAt(row, 3).toString());
-            view.getTextFieldDob().setText(model.getValueAt(row, 4).toString());
+            try {
+            String dobString = model.getValueAt(row, 4).toString();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            LocalDate dob = LocalDate.parse(dobString, formatter);
+            java.util.Date date = java.util.Date.from(dob.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
+            view.getDateChooserDob().setDate(date);
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
         }
     }
 
@@ -272,7 +311,7 @@ public class TrainerController {
         view.getTextFieldName().setText("");
         view.getTextFieldExpertise().setSelectedIndex(0);
         view.getTextFieldPhone().setText("");
-        view.getTextFieldDob().setText("");
+        view.getDateChooserDob().setDate(null);
         view.getTextFieldSearch().setText("");
     }
     

@@ -3,7 +3,7 @@
     <member>
         <id>M01</id>
         <name>Nuyễn văn A</name>
-        <dob>2000/11/19</dob>
+        <dob>2025-07-30T00:00:00+07:00</dob>
         <phone>00997287616</phone>
         <exerciseType>
             <id>22008192</id>
@@ -12,20 +12,21 @@
         </exerciseType>
         <room>
             <id></id>
-            <name>đsfds</name>
+            <name>hát</name>
             <capacity>0</capacity>
         </room>
         <trainer>
-            <id>23224</id>
-            <name>đhhhd</name>
-            <expertise>nnnn</expertise>
-            <phone></phone>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
         </trainer>
     </member>
     <member>
         <id>M02</id>
         <name>Nuyễn văn B</name>
-        <dob>2001/05/10</dob>
+        <dob>2025-07-17T15:28:37.040+07:00</dob>
         <phone>00997287600</phone>
         <exerciseType>
             <id>22008192</id>
@@ -34,20 +35,21 @@
         </exerciseType>
         <room>
             <id></id>
-            <name>đsfds</name>
+            <name>hát</name>
             <capacity>0</capacity>
         </room>
         <trainer>
-            <id>23224</id>
-            <name>đhhhd</name>
-            <expertise>nnnn</expertise>
-            <phone></phone>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
         </trainer>
     </member>
     <member>
         <id>M03</id>
         <name>Nuyễn văn C</name>
-        <dob>2010/05/10</dob>
+        <dob>2004-07-23T14:49:35.535+07:00</dob>
         <phone>00997287991</phone>
         <exerciseType>
             <id>22008194</id>
@@ -56,20 +58,21 @@
         </exerciseType>
         <room>
             <id></id>
-            <name>đsfds</name>
+            <name>hát</name>
             <capacity>0</capacity>
         </room>
         <trainer>
-            <id>23224</id>
-            <name>đhhhd</name>
-            <expertise>nnnn</expertise>
-            <phone></phone>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
         </trainer>
     </member>
     <member>
         <id>M04</id>
         <name>Nguyễn văn D</name>
-        <dob>2005/06/10</dob>
+        <dob>2025-07-23T15:42:11.608+07:00</dob>
         <phone>098328978732</phone>
         <exerciseType>
             <id>22008195</id>
@@ -78,7 +81,7 @@
         </exerciseType>
         <room>
             <id></id>
-            <name>đsfds</name>
+            <name>hát</name>
             <capacity>0</capacity>
         </room>
         <trainer>

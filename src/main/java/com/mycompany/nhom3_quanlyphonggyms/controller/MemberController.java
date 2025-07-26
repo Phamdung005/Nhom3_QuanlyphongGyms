@@ -16,6 +16,7 @@ import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -234,6 +235,7 @@ public class MemberController {
         @Override
         public void actionPerformed(ActionEvent e) {
             int selectedIndex = memberView.getSelectedSortIndex();
+            System.out.println("ComboBox chọn: " + selectedIndex);
             SortMemberListByIndex(selectedIndex);
             memberView.showMemberList(managerMembers.getMemberList());
         }
@@ -242,7 +244,7 @@ public class MemberController {
             List<Member> list = managerMembers.getMemberList();
             switch (index) {
                 case 1:
-                    list.sort((m1, m2) -> Integer.compare(Integer.parseInt(m1.getId()), Integer.parseInt(m2.getId())));
+                    list.sort((m1, m2) -> m1.getId().compareToIgnoreCase(m2.getId()));
                     break;
                 case 2:
                     list.sort((m1, m2) -> m2.getId().compareToIgnoreCase(m1.getId()));
@@ -253,13 +255,28 @@ public class MemberController {
                 case 4:
                     list.sort((m1, m2) -> m2.getName().compareToIgnoreCase(m1.getName()));
                     break;
-                case 5:{
-                    list.sort((m1, m2) -> m1.getDob().compareToIgnoreCase(m2.getDob()));
+                case 5: { 
+                    list.sort((m1, m2) -> {
+                    Date d1 = m1.getDob();
+                    Date d2 = m2.getDob();
+                    if (d1 == null && d2 == null) return 0;
+                    if (d1 == null) return 1;   
+                    if (d2 == null) return -1;  
+                    return d1.compareTo(d2);
+                    });
                     break;
                 }
-                case 6:
-                    list.sort((m1, m2) -> m2.getDob().compareToIgnoreCase(m1.getDob()));
+                case 6: {
+                    list.sort((m1, m2) -> {
+                    Date d1 = m1.getDob();
+                    Date d2 = m2.getDob();
+                    if (d1 == null && d2 == null) return 0;
+                    if (d1 == null) return 1;
+                    if (d2 == null) return -1;
+                    return d2.compareTo(d1);
+                    });
                     break;
+                }
 
                 case 7: 
                     list.sort((m1, m2) -> m1.getExerciseType().getName().compareToIgnoreCase(m2.getExerciseType().getName()));

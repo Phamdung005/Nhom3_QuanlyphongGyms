@@ -1,5 +1,7 @@
 package com.mycompany.nhom3_quanlyphonggyms.entity;
 
+
+import java.util.Date;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "member") // root XML tag cho mỗi đối tượng Member
@@ -7,7 +9,7 @@ import javax.xml.bind.annotation.*;
 public class Member {
     private String id;
     private String name;
-    private String dob;
+    private Date dob;
     private String phone;
 
     @XmlElement(name = "exerciseType")
@@ -23,7 +25,7 @@ public class Member {
         
     }
 
-    public Member(String id, String name, String dob, String phone, ExerciseType exerciseType, Room room, Trainer trainer) {
+    public Member(String id, String name, Date dob, String phone, ExerciseType exerciseType, Room room, Trainer trainer) {
         this.id = id;
         this.name = name;
         this.dob = dob;
@@ -47,10 +49,10 @@ public class Member {
         this.name = name;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
