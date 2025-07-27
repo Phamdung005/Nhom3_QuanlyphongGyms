@@ -38,6 +38,7 @@ public class TrainerView extends javax.swing.JFrame {
         initTable();
         addListeners();
         setLocationRelativeTo(null);
+        setTitle("Quản lý phòng gym");
     }
 
     /**

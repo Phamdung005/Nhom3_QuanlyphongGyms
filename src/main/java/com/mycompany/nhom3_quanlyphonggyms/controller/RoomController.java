@@ -260,5 +260,13 @@ public class RoomController {
             roomView.showRoomList(managerRooms.getRoomList());
         }
     }
+    
+    public static List<Room> getAll() {
+        RoomXML roomWrapper = (RoomXML) FileUtils.readXMLFile("Room.xml", RoomXML.class);
+        if (roomWrapper != null && roomWrapper.getRoom() != null) {
+            return roomWrapper.getRoom();
+        }
+        return new java.util.ArrayList<>();
+    }
 }
 

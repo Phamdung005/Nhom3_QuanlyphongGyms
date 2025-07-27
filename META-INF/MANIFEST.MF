@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: com.mycompany.quanlydoituongdacbiet.QuanLyDoiTuong.QuanLyDoi
- TuongDacBiet
+Created-By: Maven Jar Plugin 3.2.0
+Build-Jdk-Spec: 23
+Main-Class: com.mycompany.nhom3_quanlyphonggyms.QuanLyPhongGyms
 

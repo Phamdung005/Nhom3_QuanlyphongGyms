@@ -41,6 +41,7 @@ public class LoginView extends javax.swing.JFrame
     public LoginView() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Quản lý phòng gym");
     }
 
     /**

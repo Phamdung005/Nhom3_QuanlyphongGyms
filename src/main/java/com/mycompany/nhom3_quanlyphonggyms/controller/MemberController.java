@@ -16,6 +16,7 @@ import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -315,5 +316,12 @@ public class MemberController {
             return wrapper.getMember().size();
         }
         return 0;
+    }
+    public static List<Member> getAll() {
+        MemberXML wrapper = (MemberXML) FileUtils.readXMLFile("Member.xml", MemberXML.class);
+        if (wrapper != null && wrapper.getMember() != null) {
+            return wrapper.getMember();
+        }
+        return new ArrayList<>();
     }
 }

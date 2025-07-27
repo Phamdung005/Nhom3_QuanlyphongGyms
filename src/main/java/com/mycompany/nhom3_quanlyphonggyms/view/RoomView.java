@@ -30,6 +30,7 @@ public class RoomView extends javax.swing.JFrame {
         
         pack();
         setLocationRelativeTo(null);
+        setTitle("Quản lý phòng gym");
     }
     private void initCustomComponents() {
         tableModel = new DefaultTableModel(new String[]{"Mã phòng", "Tên phòng", "Sức chứa"}, 0);
@@ -121,7 +122,6 @@ public class RoomView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
         setFocusCycleRoot(false);
-        setPreferredSize(new java.awt.Dimension(1130, 680));
         setResizable(false);
         setSize(new java.awt.Dimension(1130, 680));
 
@@ -150,6 +150,7 @@ public class RoomView extends javax.swing.JFrame {
 
         btnAdd.setBackground(new java.awt.Color(204, 204, 204));
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/add.png"))); // NOI18N
         btnAdd.setText("THÊM ");
         btnAdd.setName("btnAdd"); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +161,7 @@ public class RoomView extends javax.swing.JFrame {
 
         btnEdit.setBackground(new java.awt.Color(204, 204, 204));
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/Edit.png"))); // NOI18N
         btnEdit.setText("SỬA ");
         btnEdit.setName("btnEdit"); // NOI18N
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +172,7 @@ public class RoomView extends javax.swing.JFrame {
 
         btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/delete.png"))); // NOI18N
         btnDelete.setText("XÓA ");
         btnDelete.setName("btnDelete"); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +183,7 @@ public class RoomView extends javax.swing.JFrame {
 
         btnSearch.setBackground(new java.awt.Color(204, 204, 204));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/search.png"))); // NOI18N
         btnSearch.setText("TÌM KIẾM");
         btnSearch.setName("btnSearch"); // NOI18N
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -375,21 +379,22 @@ public class RoomView extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(btnEdit)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(267, 267, 267)
                                         .addComponent(jLabel1))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(16, 16, 16)
-                                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAdd)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnSearch)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel2)))
                                 .addGap(18, 18, 18)
@@ -431,11 +436,9 @@ public class RoomView extends javax.swing.JFrame {
                                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()

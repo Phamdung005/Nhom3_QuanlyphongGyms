@@ -36,6 +36,7 @@ public class MemberView extends javax.swing.JFrame {
     public MemberView() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Quản lý phòng gym");
     }
 
     /**

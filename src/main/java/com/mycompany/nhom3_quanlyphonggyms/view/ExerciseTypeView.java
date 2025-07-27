@@ -82,7 +82,6 @@ public class ExerciseTypeView extends javax.swing.JFrame {
         btnDangXuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1130, 680));
         setResizable(false);
         setSize(new java.awt.Dimension(1500, 685));
 
@@ -113,18 +112,22 @@ public class ExerciseTypeView extends javax.swing.JFrame {
 
         btnAdd.setBackground(new java.awt.Color(204, 204, 204));
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/add.png"))); // NOI18N
         btnAdd.setText("THÊM");
 
         btnEdit.setBackground(new java.awt.Color(204, 204, 204));
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/Edit.png"))); // NOI18N
         btnEdit.setText("SỬA");
 
         btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/delete.png"))); // NOI18N
         btnDelete.setText("XÓA");
 
         btnSearch.setBackground(new java.awt.Color(204, 204, 204));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/nhom3_quanlyphonggyms/view/search.png"))); // NOI18N
         btnSearch.setText("TÌM KIẾM");
 
         txtDescription.setColumns(20);

@@ -48,6 +48,7 @@ public class MainView extends javax.swing.JFrame {
         managerTrainers = new ManagerTrainers();
         showDashboardStats();
         setLocationRelativeTo(null);
+        setTitle("Quản lý phòng gym");
     }
 
     /**
@@ -77,6 +78,12 @@ public class MainView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lblAvgType = new javax.swing.JLabel();
+        lblAvgRoom = new javax.swing.JLabel();
+        lblMaxRoom = new javax.swing.JLabel();
+        lblMinRoom = new javax.swing.JLabel();
+        lblMinType = new javax.swing.JLabel();
+        lblMaxType = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -249,30 +256,81 @@ public class MainView extends javax.swing.JFrame {
         jLabel6.setText("TỔNG SỐ LOẠI HÌNH HIỆN CÓ\n");
         jLabel6.setOpaque(true);
 
+        lblAvgType.setBackground(new java.awt.Color(204, 0, 204));
+        lblAvgType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAvgType.setForeground(new java.awt.Color(255, 255, 255));
+        lblAvgType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAvgType.setText("ROOM\n\n");
+        lblAvgType.setOpaque(true);
+
+        lblAvgRoom.setBackground(new java.awt.Color(204, 0, 204));
+        lblAvgRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAvgRoom.setForeground(new java.awt.Color(255, 255, 255));
+        lblAvgRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAvgRoom.setText("ROOM\n\n");
+        lblAvgRoom.setOpaque(true);
+
+        lblMaxRoom.setBackground(new java.awt.Color(204, 0, 204));
+        lblMaxRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMaxRoom.setForeground(new java.awt.Color(255, 255, 255));
+        lblMaxRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMaxRoom.setText("ROOM\n\n");
+        lblMaxRoom.setOpaque(true);
+
+        lblMinRoom.setBackground(new java.awt.Color(0, 153, 204));
+        lblMinRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMinRoom.setForeground(new java.awt.Color(255, 255, 255));
+        lblMinRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinRoom.setText("TRAINER");
+        lblMinRoom.setOpaque(true);
+
+        lblMinType.setBackground(new java.awt.Color(0, 153, 204));
+        lblMinType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMinType.setForeground(new java.awt.Color(255, 255, 255));
+        lblMinType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinType.setText("TRAINER");
+        lblMinType.setOpaque(true);
+
+        lblMaxType.setBackground(new java.awt.Color(0, 153, 204));
+        lblMaxType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMaxType.setForeground(new java.awt.Color(255, 255, 255));
+        lblMaxType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMaxType.setText("TRAINER");
+        lblMaxType.setOpaque(true);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTotalExerciseTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 63, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(lblTotalExerciseTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblMaxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvgRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvgType, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 53, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTotalMembers2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTotalMembers2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblMinRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMaxType, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMinType, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,7 +353,19 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(lblTotalRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotalTrainers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMaxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMinRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAvgRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMaxType, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAvgType, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMinType, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -397,6 +467,74 @@ public class MainView extends javax.swing.JFrame {
         lblTotalTrainers.setText(totalTrainers + "");
         lblTotalMembers2.setText(totalMembers + "");
         lblTotalExerciseTypes.setText(totalExerciseTypes + "");
+        List<Room> rooms = RoomController.getAll();
+        List<ExerciseType> types = ExerciseTypeController.getAll();
+        List<Member> members = MemberController.getAll();
+
+    // Thống kê phòng
+        int maxCapacity = Integer.MIN_VALUE;
+        int minCapacity = Integer.MAX_VALUE;
+        int totalCapacity = 0;
+        Room maxRoom = null, minRoom = null;
+
+        for (Room r : rooms) {
+            int cap = r.getCapacity();
+            totalCapacity += cap;
+        
+            if (cap > maxCapacity) {
+                maxCapacity = cap;
+                maxRoom = r;
+            }
+            if (cap < minCapacity) {
+                minCapacity = cap;
+                minRoom = r;
+            }
+        }
+
+        double avgCapacity = rooms.size() > 0 ? (double) totalCapacity / rooms.size() : 0;
+
+        lblMaxRoom.setText("Phòng có sức chứa lớn nhất: " + (maxRoom != null ? maxRoom.getName() + " (" + maxCapacity + ")" : "N/A"));
+        lblMinRoom.setText("Phòng có sức chứa nhỏ nhất: " + (minRoom != null ? minRoom.getName() + " (" + minCapacity + ")" : "N/A"));
+        lblAvgRoom.setText("Trung bình sức chứa ở các phòng: " + String.format("%.2f", avgCapacity));
+
+    // Thống kê loại hình
+        Map<String, Integer> typeCount = new HashMap<>();
+        for (ExerciseType type : types) {
+            typeCount.put(type.getName(), 0);
+        }
+
+        for (Member m : members) {
+            ExerciseType type = m.getExerciseType();
+            if (type != null) {
+                String typeName = type.getName();
+                if (typeCount.containsKey(typeName)) {
+                    typeCount.put(typeName, typeCount.get(typeName) + 1);
+                }
+            }
+        }
+
+        String maxType = "", minType = "";
+        int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, sum = 0;
+
+        for (Map.Entry<String, Integer> entry : typeCount.entrySet()) {
+            int count = entry.getValue();
+            sum += count;
+
+            if (count > max) {
+                max = count;
+            maxType = entry.getKey();
+            }
+            if (count < min) {
+                min = count;
+                minType = entry.getKey();
+            }
+        }
+
+        double avg = types.size() > 0 ? (double) sum / types.size() : 0;
+        
+        lblMaxType.setText("Loại hình đông học viên nhất: " + maxType + " (" + max + ")");
+        lblMinType.setText("Loại hình ít học viên nhất: " + minType + " (" + min + ")");
+        lblAvgType.setText("Trung bình học viên ở các loại hình: " + String.format("%.2f", avg));
     }
     
     public void addChooseRoomListener(ActionListener listener) {
@@ -432,6 +570,12 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAvgRoom;
+    private javax.swing.JLabel lblAvgType;
+    private javax.swing.JLabel lblMaxRoom;
+    private javax.swing.JLabel lblMaxType;
+    private javax.swing.JLabel lblMinRoom;
+    private javax.swing.JLabel lblMinType;
     private javax.swing.JLabel lblTotalExerciseTypes;
     private javax.swing.JLabel lblTotalMembers2;
     private javax.swing.JLabel lblTotalRooms;

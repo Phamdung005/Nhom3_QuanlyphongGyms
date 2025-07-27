@@ -197,5 +197,12 @@ public class ExerciseTypeController {
         }
         return 0;
     }
+    public static List<ExerciseType> getAll() {
+        ExerciseTypeXML wrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
+        if (wrapper != null && wrapper.getExerciseTypes() != null) {
+            return wrapper.getExerciseTypes();
+        }
+        return new java.util.ArrayList<>();
+    }
 }
 

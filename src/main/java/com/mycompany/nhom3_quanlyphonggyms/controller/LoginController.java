@@ -48,6 +48,7 @@ public class LoginController
     {
         public void actionPerformed(ActionEvent e) 
         {
+            System.out.println("Da bam nut dang nhap");
             User user = loginView.getUser();
             if (checkLogin.checkUser(user)) 
             {
