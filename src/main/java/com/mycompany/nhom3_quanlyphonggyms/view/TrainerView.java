@@ -80,8 +80,6 @@ public class TrainerView extends javax.swing.JFrame {
         txtDob = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1130, 680));
-        setPreferredSize(new java.awt.Dimension(1130, 680));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
@@ -177,6 +175,7 @@ public class TrainerView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableTrainer.setRowHeight(40);
         jScrollPane1.setViewportView(jTableTrainer);
 
         cbSortBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sắp xếp", "Mã (tăng dần)", "Mã (giảm dần)", "Họ tên (A - Z)", "Họ tên (Z - A)", "Ngày sinh (cũ - mới)", "Ngày sinh (mới - cũ)", "Loại hình", " ", " " }));

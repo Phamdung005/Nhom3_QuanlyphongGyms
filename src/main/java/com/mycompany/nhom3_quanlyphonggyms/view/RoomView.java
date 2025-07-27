@@ -215,6 +215,7 @@ public class RoomView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        table.setRowHeight(40);
         jScrollPane2.setViewportView(table);
 
         btnSortById.setBackground(new java.awt.Color(0, 204, 204));

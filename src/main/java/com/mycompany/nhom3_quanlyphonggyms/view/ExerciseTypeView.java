@@ -82,8 +82,9 @@ public class ExerciseTypeView extends javax.swing.JFrame {
         btnDangXuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1130, 680));
         setResizable(false);
-        setSize(new java.awt.Dimension(1500, 685));
+        setSize(new java.awt.Dimension(1130, 680));
 
         lblId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblId.setText("TÌM KIẾM");
@@ -105,6 +106,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setRowHeight(40);
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -269,7 +271,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
                             .addGap(55, 55, 55)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSearch)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

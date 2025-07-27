@@ -201,97 +201,97 @@ public class MainView extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(1130, 680));
         jPanel2.setPreferredSize(new java.awt.Dimension(1130, 680));
 
-        lblTotalRooms.setBackground(new java.awt.Color(204, 0, 204));
+        lblTotalRooms.setBackground(new java.awt.Color(231, 76, 60));
         lblTotalRooms.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalRooms.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalRooms.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalRooms.setText("ROOM\n\n");
         lblTotalRooms.setOpaque(true);
 
-        lblTotalTrainers.setBackground(new java.awt.Color(0, 153, 204));
+        lblTotalTrainers.setBackground(new java.awt.Color(155, 89, 182));
         lblTotalTrainers.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalTrainers.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalTrainers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalTrainers.setText("TRAINER");
         lblTotalTrainers.setOpaque(true);
 
-        lblTotalExerciseTypes.setBackground(new java.awt.Color(0, 204, 153));
+        lblTotalExerciseTypes.setBackground(new java.awt.Color(52, 152, 219));
         lblTotalExerciseTypes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalExerciseTypes.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalExerciseTypes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalExerciseTypes.setText("EXERCISETYPE  ");
         lblTotalExerciseTypes.setOpaque(true);
 
-        lblTotalMembers2.setBackground(new java.awt.Color(255, 0, 0));
+        lblTotalMembers2.setBackground(new java.awt.Color(46, 204, 113));
         lblTotalMembers2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTotalMembers2.setForeground(new java.awt.Color(255, 255, 255));
         lblTotalMembers2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTotalMembers2.setText("MEMBER\n");
+        lblTotalMembers2.setText("MEMBER ");
         lblTotalMembers2.setOpaque(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Thống kê");
 
-        jLabel2.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel2.setBackground(new java.awt.Color(46, 204, 113));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("TỔNG SỐ HỌC VIÊN HIỆN CÓ\n");
         jLabel2.setOpaque(true);
 
-        jLabel4.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel4.setBackground(new java.awt.Color(155, 89, 182));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("TỔNG SỐ HLV HIỆN CÓ\n");
         jLabel4.setOpaque(true);
 
-        jLabel5.setBackground(new java.awt.Color(204, 0, 204));
+        jLabel5.setBackground(new java.awt.Color(231, 76, 60));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("TỔNG SỐ PHÒNG HIỆN CÓ\n");
         jLabel5.setOpaque(true);
 
-        jLabel6.setBackground(new java.awt.Color(0, 204, 153));
+        jLabel6.setBackground(new java.awt.Color(52, 152, 219));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("TỔNG SỐ LOẠI HÌNH HIỆN CÓ\n");
+        jLabel6.setText("TỔNG SỐ LOẠI HÌNH HIỆN CÓ ");
         jLabel6.setOpaque(true);
 
-        lblAvgType.setBackground(new java.awt.Color(204, 0, 204));
+        lblAvgType.setBackground(new java.awt.Color(52, 73, 94));
         lblAvgType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAvgType.setForeground(new java.awt.Color(255, 255, 255));
         lblAvgType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAvgType.setText("ROOM\n\n");
         lblAvgType.setOpaque(true);
 
-        lblAvgRoom.setBackground(new java.awt.Color(204, 0, 204));
+        lblAvgRoom.setBackground(new java.awt.Color(26, 188, 156));
         lblAvgRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAvgRoom.setForeground(new java.awt.Color(255, 255, 255));
         lblAvgRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAvgRoom.setText("ROOM\n\n");
         lblAvgRoom.setOpaque(true);
 
-        lblMaxRoom.setBackground(new java.awt.Color(204, 0, 204));
+        lblMaxRoom.setBackground(new java.awt.Color(241, 196, 15));
         lblMaxRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblMaxRoom.setForeground(new java.awt.Color(255, 255, 255));
         lblMaxRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMaxRoom.setText("ROOM\n\n");
         lblMaxRoom.setOpaque(true);
 
-        lblMinRoom.setBackground(new java.awt.Color(0, 153, 204));
+        lblMinRoom.setBackground(new java.awt.Color(230, 126, 34));
         lblMinRoom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblMinRoom.setForeground(new java.awt.Color(255, 255, 255));
         lblMinRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinRoom.setText("TRAINER");
         lblMinRoom.setOpaque(true);
 
-        lblMinType.setBackground(new java.awt.Color(0, 153, 204));
+        lblMinType.setBackground(new java.awt.Color(243, 156, 18));
         lblMinType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblMinType.setForeground(new java.awt.Color(255, 255, 255));
         lblMinType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinType.setText("TRAINER");
         lblMinType.setOpaque(true);
 
-        lblMaxType.setBackground(new java.awt.Color(0, 153, 204));
+        lblMaxType.setBackground(new java.awt.Color(149, 165, 166));
         lblMaxType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblMaxType.setForeground(new java.awt.Color(255, 255, 255));
         lblMaxType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

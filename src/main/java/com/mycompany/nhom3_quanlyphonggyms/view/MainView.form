@@ -345,7 +345,7 @@
         <Component class="javax.swing.JLabel" name="lblTotalRooms">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="cc" type="rgb"/>
+              <Color blue="3c" green="4c" red="e7" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -361,7 +361,7 @@
         <Component class="javax.swing.JLabel" name="lblTotalTrainers">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="99" red="0" type="rgb"/>
+              <Color blue="b6" green="59" red="9b" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -377,7 +377,7 @@
         <Component class="javax.swing.JLabel" name="lblTotalExerciseTypes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="cc" red="0" type="rgb"/>
+              <Color blue="db" green="98" red="34" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -393,7 +393,7 @@
         <Component class="javax.swing.JLabel" name="lblTotalMembers2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
+              <Color blue="71" green="cc" red="2e" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -402,7 +402,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="MEMBER&#xa;"/>
+            <Property name="text" type="java.lang.String" value="MEMBER "/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
@@ -417,7 +417,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="0" red="ff" type="rgb"/>
+              <Color blue="71" green="cc" red="2e" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -432,7 +432,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="99" red="0" type="rgb"/>
+              <Color blue="b6" green="59" red="9b" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -447,7 +447,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="cc" type="rgb"/>
+              <Color blue="3c" green="4c" red="e7" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -462,7 +462,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="cc" red="0" type="rgb"/>
+              <Color blue="db" green="98" red="34" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -470,14 +470,14 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="T&#x1ed4;NG S&#x1ed0; LO&#x1ea0;I H&#xcc;NH HI&#x1ec6;N C&#xd3;&#xa;"/>
+            <Property name="text" type="java.lang.String" value="T&#x1ed4;NG S&#x1ed0; LO&#x1ea0;I H&#xcc;NH HI&#x1ec6;N C&#xd3; "/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAvgType">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="cc" type="rgb"/>
+              <Color blue="5e" green="49" red="34" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -493,7 +493,7 @@
         <Component class="javax.swing.JLabel" name="lblAvgRoom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="cc" type="rgb"/>
+              <Color blue="9c" green="bc" red="1a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -509,7 +509,7 @@
         <Component class="javax.swing.JLabel" name="lblMaxRoom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="cc" type="rgb"/>
+              <Color blue="f" green="c4" red="f1" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -525,7 +525,7 @@
         <Component class="javax.swing.JLabel" name="lblMinRoom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="99" red="0" type="rgb"/>
+              <Color blue="22" green="7e" red="e6" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -541,7 +541,7 @@
         <Component class="javax.swing.JLabel" name="lblMinType">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="99" red="0" type="rgb"/>
+              <Color blue="12" green="9c" red="f3" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -557,7 +557,7 @@
         <Component class="javax.swing.JLabel" name="lblMaxType">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="99" red="0" type="rgb"/>
+              <Color blue="a6" green="a5" red="95" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
