@@ -8,15 +8,17 @@ public class ExerciseType {
     private String id;
     private String name;
     private String description;
+    private double fee;
 
     public ExerciseType() {
 
     }
 
-    public ExerciseType(String id, String name, String description) {
+    public ExerciseType(String id, String name, String description, double fee) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.fee = fee;
     }
 
     public void setId(String id) {
@@ -55,6 +57,12 @@ public class ExerciseType {
     @Override
     public String toString() {
         return name;
+    }
+    public void setFee(double fee) {
+        this.fee = fee;
+    }
+    public double getFee() {
+        return fee;
     }
     
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.nhom3_quanlyphonggyms.action;
 
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
@@ -15,11 +11,11 @@ import javax.xml.bind.Unmarshaller;
 
 public class ManagerMembers {
     private List<Member> memberList = new ArrayList<>();
-    private static final String DEFAULT_MEMBER_PATH = "members.xml";
 
     public ManagerMembers() {
         ManagerExerciseTypes met = new ManagerExerciseTypes();
-        loadFromFile(DEFAULT_MEMBER_PATH, met.getExerciseTypes());
+        loadFromFile(met.getExerciseTypes());
+        updateExerciseTypes(met.getExerciseTypes());
     }
 
     public List<Member> getMemberList() {
@@ -42,6 +38,18 @@ public class ManagerMembers {
             }
         }
     }
+    public void updateExerciseTypes(List<ExerciseType> types) {
+    for (Member m : memberList) {
+        for (ExerciseType ex : types) {
+            if (ex.getId().equals(m.getExerciseType().getId())) {
+                m.setExerciseType(ex);
+                break;
+            }
+        }
+    }
+}
+
+
     public void deleteMember(Member member) {
         memberList.removeIf(m -> m.getId().equals(member.getId()));
     }
@@ -55,25 +63,53 @@ public class ManagerMembers {
                 .filter(m -> m.getName().toLowerCase().contains(keyword.toLowerCase()))
                 .toList();
     }
-    public void loadFromFile(String path, List<ExerciseType> exerciseTypes) {
-        try {
-            JAXBContext context = JAXBContext.newInstance(MemberXML.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            MemberXML memberXML = (MemberXML) unmarshaller.unmarshal(new File(path));
-            this.memberList = memberXML.getMember();
 
-        // Gán lại ExerciseType từ danh sách hiện có (tránh reference khác)
+    public void loadFromFile(List<ExerciseType> exerciseTypes) {
+        try {
+            String basePath = System.getProperty("user.dir");
+            File file = new File(basePath + File.separator + "Member.xml");
+            System.out.println("Loading file: " + file.getAbsolutePath());
+
+            if (!file.exists()) {
+                System.err.println("File không tồn tại: " + file.getAbsolutePath());
+                return;
+            }
+
+            JAXBContext context = JAXBContext.newInstance(MemberXML.class);
+            Unmarshaller um = context.createUnmarshaller();
+
+            MemberXML wrapper = (MemberXML) um.unmarshal(file);
+            this.memberList = wrapper.getMember();
+
+            // Gán ExerciseType đúng lại
             for (Member m : memberList) {
-                for (ExerciseType et : exerciseTypes) {
-                    if (m.getExerciseType() != null && 
-                        et.getId().equals(m.getExerciseType().getId())) {
-                        m.setExerciseType(et);
+                for (ExerciseType ex : exerciseTypes) {
+                    if (ex.getId().equals(m.getExerciseType().getId())) {
+                        m.setExerciseType(ex);
+                        break;
                     }
                 }
             }
+
         } catch (Exception e) {
+            System.err.println("Lỗi khi load Member.xml:");
             e.printStackTrace();
         }
     }
-}
 
+    public boolean isSameInfoExceptExerciseType(Member newMember) {
+        for (Member m : memberList) {
+            if (m.getId().equalsIgnoreCase(newMember.getId())) {
+                boolean sameName = m.getName().equalsIgnoreCase(newMember.getName());
+                boolean sameDob = m.getDob().equals(newMember.getDob());
+                boolean samePhone = m.getPhone().equalsIgnoreCase(newMember.getPhone());
+                boolean sameRoom = m.getRoom().getId().equalsIgnoreCase(newMember.getRoom().getId());
+                boolean sameTrainer = m.getTrainer().getId().equalsIgnoreCase(newMember.getTrainer().getId());
+
+                return sameName && sameDob && samePhone && sameRoom && sameTrainer;
+            }
+        }
+        return true;
+    }
+    
+}

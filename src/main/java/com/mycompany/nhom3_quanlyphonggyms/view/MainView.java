@@ -68,6 +68,7 @@ public class MainView extends javax.swing.JFrame {
         btnChooseMember = new javax.swing.JButton();
         btnDashboard = new javax.swing.JButton();
         btnDangXuat = new javax.swing.JButton();
+        btnInvoice = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblTotalRooms = new javax.swing.JLabel();
         lblTotalTrainers = new javax.swing.JLabel();
@@ -149,6 +150,11 @@ public class MainView extends javax.swing.JFrame {
         btnDashboard.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
         btnDashboard.setText("Thống kê");
+        btnDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDashboardActionPerformed(evt);
+            }
+        });
 
         btnDangXuat.setBackground(new java.awt.Color(88, 86, 128));
         btnDangXuat.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -166,6 +172,21 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        btnInvoice.setBackground(new java.awt.Color(88, 86, 128));
+        btnInvoice.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnInvoice.setForeground(new java.awt.Color(255, 255, 255));
+        btnInvoice.setText("<html><div style='text-align: center;'>Quản Lý học phí<br></div>");
+        btnInvoice.setToolTipText("");
+        btnInvoice.setBorder(null);
+        btnInvoice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInvoice.setPreferredSize(new java.awt.Dimension(250, 40));
+        btnInvoice.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnInvoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInvoiceActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -177,25 +198,28 @@ public class MainView extends javax.swing.JFrame {
                     .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(14, 14, 14)
                 .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(27, 27, 27)
                 .addComponent(btnChooseExerciseType, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(25, 25, 25)
                 .addComponent(btnChooseTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(26, 26, 26)
                 .addComponent(btnChooseRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(25, 25, 25)
                 .addComponent(btnChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(25, 25, 25)
+                .addComponent(btnInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1130, 680));
@@ -421,6 +445,14 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
+    private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDashboardActionPerformed
+
+    private void btnInvoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvoiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInvoiceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -552,6 +584,10 @@ public class MainView extends javax.swing.JFrame {
     public void addDangXuatListener(ActionListener listener) {
         btnDangXuat.addActionListener(listener);
     }
+    public void addChooseInvoiceListener(ActionListener listener) {
+        btnInvoice.addActionListener(listener);
+    }
+    
 
     
     
@@ -562,6 +598,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnChooseTrainer;
     private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnDashboard;
+    private javax.swing.JButton btnInvoice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

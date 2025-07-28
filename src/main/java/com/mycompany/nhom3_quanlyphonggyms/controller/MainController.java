@@ -4,10 +4,12 @@
  */
 package com.mycompany.nhom3_quanlyphonggyms.controller;
 
+import com.mycompany.nhom3_quanlyphonggyms.action.ManagerMembers;
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerSpecialPerson;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.SpecialPerson;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.InvoiceView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.ManagerView;
@@ -29,10 +31,12 @@ public class MainController
     private ExerciseTypeView exerciseTypeView;
     private RoomView roomView;
     private MainView mainView;
+    private InvoiceView invoiceView;
     private ExerciseTypeController exerciseTypeController;
     private TrainerController trainerController;
     private MemberController memberController;
     private List<ExerciseType> exerciseTypes;
+    private InvoiceController invoiceController;
         
     public MainController(MainView view)
     {
@@ -41,6 +45,7 @@ public class MainController
         view.addChooseMemberListener(new ChooseMemberListener());
         view.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
         view.addDangXuatListener(new ButtonDangXuat());
+        view.addChooseInvoiceListener(new ChooseInvoiceListener());
         this.exerciseTypeView = new ExerciseTypeView();
         this.loginView = new LoginView();
         this.exerciseTypeController = new ExerciseTypeController(exerciseTypeView, mainView);
@@ -91,7 +96,16 @@ public class MainController
             mainView.setVisible(false);
         }
     }
-    
+    class ChooseInvoiceListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerMembers managerMembers = new ManagerMembers();
+            invoiceView = new InvoiceView();
+            invoiceController = new InvoiceController(invoiceView, managerMembers, mainView);
+            invoiceView.setVisible(true);
+            mainView.setVisible(false);
+        }
+    }
     
 
 }

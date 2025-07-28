@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <members>
     <member>
-        <id>M01</id>
-        <name>Nuyễn văn A</name>
-        <dob>2025-07-30T00:00:00+07:00</dob>
-        <phone>00997287616</phone>
+        <id>M03</id>
+        <name>Nuyễn văn C</name>
+        <dob>2004-07-23T14:49:35.535+07:00</dob>
+        <phone>00997287991</phone>
         <exerciseType>
             <id>22008192</id>
             <name>GYM</name>
             <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>hát</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
+        </trainer>
+    </member>
+    <member>
+        <id>M04</id>
+        <name>Nguyễn văn D</name>
+        <dob>2025-07-23T15:42:11.608+07:00</dob>
+        <phone>098328978732</phone>
+        <exerciseType>
+            <id>22008192</id>
+            <name>GYM</name>
+            <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>hát</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>220</id>
+            <name>hưng</name>
+            <expertise>TAEWONDO</expertise>
+            <phone>0998773552</phone>
+            <dob>2000/10/08</dob>
+        </trainer>
+    </member>
+    <member>
+        <id>M01</id>
+        <name>Nguyễn văn G</name>
+        <dob>2025-07-23T15:42:11.608+07:00</dob>
+        <phone>0983289787</phone>
+        <exerciseType>
+            <id>22008195</id>
+            <name>KARATE</name>
+            <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
         </exerciseType>
         <room>
             <id></id>
@@ -25,13 +74,38 @@
     </member>
     <member>
         <id>M02</id>
-        <name>Nuyễn văn B</name>
-        <dob>2025-07-17T15:28:37.040+07:00</dob>
-        <phone>00997287600</phone>
+        <name>Nguyễn văn B</name>
+        <dob>2025-07-16T19:22:56.044+07:00</dob>
+        <phone>982398490</phone>
         <exerciseType>
             <id>22008192</id>
             <name>GYM</name>
             <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>hát</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>234234</id>
+            <name>mai</name>
+            <expertise>GYM</expertise>
+            <phone>23423423</phone>
+            <dob>2000/08/09</dob>
+        </trainer>
+    </member>
+    <member>
+        <id>M03</id>
+        <name>Nuyễn văn C</name>
+        <dob>2004-07-23T14:49:35.535+07:00</dob>
+        <phone>00997287991</phone>
+        <exerciseType>
+            <id>22008193</id>
+            <name>YOGA</name>
+            <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
         </exerciseType>
         <room>
             <id></id>
@@ -55,6 +129,7 @@
             <id>22008194</id>
             <name>TAEWONDO</name>
             <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
         </exerciseType>
         <room>
             <id></id>
@@ -70,14 +145,15 @@
         </trainer>
     </member>
     <member>
-        <id>M04</id>
-        <name>Nguyễn văn D</name>
-        <dob>2025-07-23T15:42:11.608+07:00</dob>
-        <phone>098328978732</phone>
+        <id>M03</id>
+        <name>Nuyễn văn C</name>
+        <dob>2004-07-23T14:49:35.535+07:00</dob>
+        <phone>00997287991</phone>
         <exerciseType>
             <id>22008195</id>
             <name>KARATE</name>
             <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
         </exerciseType>
         <room>
             <id></id>
@@ -90,6 +166,54 @@
             <expertise>TAEWONDO</expertise>
             <phone>0998773552</phone>
             <dob>2000/10/08</dob>
+        </trainer>
+    </member>
+    <member>
+        <id>1100992</id>
+        <name>hello deellll</name>
+        <dob>2025-07-16T22:24:22.329+07:00</dob>
+        <phone>90009892374</phone>
+        <exerciseType>
+            <id>22008194</id>
+            <name>TAEWONDO</name>
+            <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>hát</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>234234</id>
+            <name>mai</name>
+            <expertise>GYM</expertise>
+            <phone>23423423</phone>
+            <dob>2000/08/09</dob>
+        </trainer>
+    </member>
+    <member>
+        <id>1100992</id>
+        <name>hello deellll</name>
+        <dob>2025-07-16T22:24:22.329+07:00</dob>
+        <phone>90009892374</phone>
+        <exerciseType>
+            <id>22008192</id>
+            <name>GYM</name>
+            <description>aaaaaaaaaaaaaaa</description>
+            <fee>100000.0</fee>
+        </exerciseType>
+        <room>
+            <id></id>
+            <name>hát</name>
+            <capacity>0</capacity>
+        </room>
+        <trainer>
+            <id>234234</id>
+            <name>mai</name>
+            <expertise>GYM</expertise>
+            <phone>23423423</phone>
+            <dob>2000/08/09</dob>
         </trainer>
     </member>
 </members>

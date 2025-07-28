@@ -59,10 +59,32 @@ public class ManagerExerciseTypes {
             JAXBContext context = JAXBContext.newInstance(ExerciseTypeXML.class);
             Unmarshaller um = context.createUnmarshaller();
             ExerciseTypeXML wrapper = (ExerciseTypeXML) um.unmarshal(file);
-            this.exerciseTypes = wrapper.getExerciseTypes();
+
+            if (wrapper != null && wrapper.getExerciseTypes() != null) {
+                this.exerciseTypes = wrapper.getExerciseTypes();
+            } else {
+                this.exerciseTypes = new ArrayList<>();
+            }
+
+        // Debug thử để chắc chắn đã load
+            System.out.println("Số loại hình đã load: " + exerciseTypes.size());
+            for (ExerciseType ex : exerciseTypes) {
+                System.out.println("ID: " + ex.getId() + ", Name: " + ex.getName() + ", Fee: " + ex.getFee());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
+            this.exerciseTypes = new ArrayList<>(); 
         }
     }
+    public ExerciseType findById(String id) {
+    for (ExerciseType type : this.exerciseTypes) {
+        if (type.getId().equals(id)) {
+            return type;
+        }
+    }
+    return null;
+}
+    
 }
 

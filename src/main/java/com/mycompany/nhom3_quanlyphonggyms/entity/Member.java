@@ -11,6 +11,7 @@ public class Member {
     private String name;
     private Date dob;
     private String phone;
+    private String dateCreated;
 
     @XmlElement(name = "exerciseType")
     private ExerciseType exerciseType;
@@ -82,5 +83,9 @@ public class Member {
     
     public void setTrainer (Trainer trainer) {
         this.trainer = trainer;
+    }
+    
+    public String getDateCreated() {
+        return dateCreated;
     }
 }

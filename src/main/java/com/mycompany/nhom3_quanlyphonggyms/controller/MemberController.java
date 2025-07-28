@@ -10,6 +10,7 @@ import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.InvoiceView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
 import com.mycompany.nhom3_quanlyphonggyms.view.TrainerView;
@@ -36,6 +37,8 @@ public class MemberController {
     private ExerciseTypeView exerciseTypeView;
     private TrainerView trainerView;
     private LoginView loginView;
+    private InvoiceView invoiceView;
+    private InvoiceController invoiceController;
     
     public MemberController(MemberView memberView, MainView mainView) {
         this.memberView = memberView;
@@ -60,6 +63,7 @@ public class MemberController {
         this.memberView.addChooseRoomListener(new ChooseRoomListener());
         this.memberView.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
         this.memberView.addDangXuatListener(new ButtonDangXuat());
+        this.memberView.addChooseInvoiceListener(new ChooseInvoiceListener());
         loadData();
         updateComboBoxes();
         showMemberList();
@@ -104,36 +108,46 @@ public class MemberController {
 
     private void loadData() {
     try {
+        // Đọc dữ liệu ExerciseType TRƯỚC
+        ExerciseTypeXML etWrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
+        if (etWrapper != null && etWrapper.getExerciseTypes() != null) {
+            managerExerciseTypes.setExerciseTypes(etWrapper.getExerciseTypes());
+        }
+
+        // Rồi mới đọc Member
         MemberXML wrapper = (MemberXML) FileUtils.readXMLFile("Member.xml", MemberXML.class);
         if (wrapper != null && wrapper.getMember() != null) {
-            managerMembers.setMemberList(wrapper.getMember());
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+            List<Member> members = wrapper.getMember();
 
-    try {
+            // Gán lại ExerciseType đầy đủ
+            for (Member m : members) {
+                if (m.getExerciseType() != null) {
+                    String exId = m.getExerciseType().getId();
+                    ExerciseType fullType = managerExerciseTypes.findById(exId);
+                    m.setExerciseType(fullType);
+                }
+            }
+
+            managerMembers.setMemberList(members);
+        }
+
+        // Load các dữ liệu còn lại
         RoomXML roomWrapper = (RoomXML) FileUtils.readXMLFile("Room.xml", RoomXML.class);
         if (roomWrapper != null && roomWrapper.getRoom() != null) {
             managerRooms.setRoomList(roomWrapper.getRoom());
         }
 
-        ExerciseTypeXML etWrapper = (ExerciseTypeXML) FileUtils.readXMLFile("ExerciseType.xml", ExerciseTypeXML.class);
-        if (etWrapper != null && etWrapper.getExerciseTypes() != null) {
-            managerExerciseTypes.setExerciseTypes(etWrapper.getExerciseTypes());
-        }
-        
         TrainerXML trainerWrapper = (TrainerXML) FileUtils.readXMLFile("Trainer.xml", TrainerXML.class);
         if(trainerWrapper != null && trainerWrapper.getTrainerList() != null) {
             managerTrainers.setTrainerList(trainerWrapper.getTrainerList());
         }
-    } catch (Exception ex) {
-        ex.printStackTrace();
+
+    } catch (Exception e) {
+        e.printStackTrace();
     }
 
     updateComboBoxes();
-    }
-
+}
 
     private void saveData() {
         MemberXML wrapper = new MemberXML();
@@ -154,21 +168,38 @@ public class MemberController {
     }
 
     class AddMemberListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Member member = memberView.getMemberInfo();
-            if (member != null) {
-                if (managerMembers.isMemberIdUnique(member.getId())) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Member member = memberView.getMemberInfo();
+        if (member != null) {
+
+           
+            if (member.getExerciseType() != null) {
+                String exId = member.getExerciseType().getId();
+                ExerciseType fullType = managerExerciseTypes.findById(exId);
+                if (fullType != null) {
+                    member.setExerciseType(fullType);
+                }
+            }
+
+            if (managerMembers.isMemberIdUnique(member.getId())) {
+                managerMembers.addMember(member);
+                showMemberList();
+                memberView.showMessage("Thêm học viên thành công!");
+                saveData();
+            } else {
+                if (managerMembers.isSameInfoExceptExerciseType(member)) {
                     managerMembers.addMember(member);
                     showMemberList();
-                    memberView.showMessage("Thêm học viên thành công!");
+                    memberView.showMessage("Thêm loại hình mới cho học viên thành công!");
                     saveData();
                 } else {
-                    memberView.showMessage("Mã học viên đã tồn tại!");
+                    memberView.showMessage("Mã học viên đã tồn tại với thông tin khác!");
                 }
             }
         }
     }
+}
 
     class EditMemberListener implements ActionListener {
         @Override
@@ -324,4 +355,16 @@ public class MemberController {
         }
         return new ArrayList<>();
     }
+    class ChooseInvoiceListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerMembers managerMembers = new ManagerMembers();
+            invoiceView = new InvoiceView();
+            invoiceController = new InvoiceController(invoiceView, managerMembers, mainView);
+            invoiceView.setVisible(true);
+            memberView.setVisible(false);
+        }
+    }
+        
+
 }

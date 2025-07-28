@@ -1,11 +1,13 @@
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\CheckLogin.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerExerciseTypes.java
+D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerInvoices.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerMembers.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerResidents.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerRooms.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerSpecialPerson.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\action\ManagerTrainers.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\ExerciseTypeController.java
+D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\InvoiceController.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\LoginController.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\MainController.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\MemberController.java
@@ -15,6 +17,8 @@ D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\myco
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\controller\TrainerController.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\ExerciseType.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\ExerciseTypeXML.java
+D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\Invoice.java
+D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\InvoiceXML.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\Member.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\MemberXML.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\entity\Person.java
@@ -30,6 +34,7 @@ D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\myco
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\QuanLyDoiTuong\QuanLyPhongGyms.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\utils\FileUtils.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\view\ExerciseTypeView.java
+D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\view\InvoiceView.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\view\LoginView.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\view\MainView.java
 D:\laptrinhhuongdoituong\baitapjava\Nhom3_QuanlyphongGyms\src\main\java\com\mycompany\nhom3_quanlyphonggyms\view\ManagerView.java

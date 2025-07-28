@@ -1,10 +1,12 @@
 package com.mycompany.nhom3_quanlyphonggyms.controller;
 
+import com.mycompany.nhom3_quanlyphonggyms.action.ManagerMembers;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Trainer;
 import com.mycompany.nhom3_quanlyphonggyms.entity.TrainerXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.InvoiceView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
@@ -29,6 +31,7 @@ import static javax.xml.bind.DatatypeConverter.parseDate;
 
 public class TrainerController {
     private MainView mainView;
+    private TrainerView trainerView;
     private TrainerView view;
     private List<Trainer> trainerList = new ArrayList<>();
     private DefaultTableModel model;
@@ -36,6 +39,8 @@ public class TrainerController {
     private MemberView memberView;
     private ExerciseTypeView exerciseTypeView;
     private RoomView roomView;
+    private InvoiceView invoiceView;
+    private InvoiceController invoiceController;
 
     public TrainerController(TrainerView view, MainView mainView) {
         this.view = view;
@@ -49,6 +54,16 @@ public class TrainerController {
         this.exerciseTypeView = new ExerciseTypeView();
         this.roomView = new RoomView();
     }
+    class ChooseInvoiceListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerMembers managerMembers = new ManagerMembers();
+            invoiceView = new InvoiceView();
+            invoiceController = new InvoiceController(invoiceView, managerMembers, mainView);
+            invoiceView.setVisible(true);
+            trainerView.setVisible(false);
+        }
+    }
 
     private void addListeners() {
         view.getBtnAdd().addActionListener(e -> addTrainer());
@@ -56,6 +71,7 @@ public class TrainerController {
         view.getBtnDelete().addActionListener(e -> deleteTrainer());
         view.getBtnSearch().addActionListener(e -> searchTrainer());
         view.getTable().getSelectionModel().addListSelectionListener(e -> fillFormFromTable());
+        view.addChooseInvoiceListener(new ChooseInvoiceListener());
         view.getBtnBack().addActionListener(e -> {
             view.dispose();
             mainView.setVisible(true);

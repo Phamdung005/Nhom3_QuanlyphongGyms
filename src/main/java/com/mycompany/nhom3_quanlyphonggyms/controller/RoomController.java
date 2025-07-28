@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.nhom3_quanlyphonggyms.controller;
+import com.mycompany.nhom3_quanlyphonggyms.action.ManagerMembers;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Room;
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerRooms;
 import com.mycompany.nhom3_quanlyphonggyms.view.RoomView;
@@ -17,6 +18,7 @@ import javax.swing.event.ListSelectionListener;
 import com.mycompany.nhom3_quanlyphonggyms.entity.RoomXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.InvoiceView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
@@ -37,6 +39,8 @@ public class RoomController {
     private MemberView memberView;
     private ExerciseTypeView exerciseTypeView;
     private LoginView loginView;
+    private InvoiceView invoiceView;
+    private InvoiceController invoiceController;
 
     RoomController(RoomView roomView) {
         throw new UnsupportedOperationException("Not supported yet."); 
@@ -82,6 +86,7 @@ public class RoomController {
         view.addChooseMemberListener(new ChooseMemberListener());
         view.addChooseExerciseTypeListener(new ChooseExerciseTypeListener());
         view.addDangXuatListener(new ButtonDangXuat());
+        view.addChooseInvoiceListener(new ChooseInvoiceListener());
     }
     
     class ChooseTrainerListener implements ActionListener {
@@ -267,6 +272,17 @@ public class RoomController {
             return roomWrapper.getRoom();
         }
         return new java.util.ArrayList<>();
+    }
+    
+    class ChooseInvoiceListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerMembers managerMembers = new ManagerMembers();
+            invoiceView = new InvoiceView();
+            invoiceController = new InvoiceController(invoiceView, managerMembers, mainView);
+            invoiceView.setVisible(true);
+            roomView.setVisible(false);
+        }
     }
 }
 

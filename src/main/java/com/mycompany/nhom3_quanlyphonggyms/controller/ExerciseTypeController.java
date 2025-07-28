@@ -5,10 +5,12 @@
 package com.mycompany.nhom3_quanlyphonggyms.controller;
 
 import com.mycompany.nhom3_quanlyphonggyms.action.ManagerExerciseTypes;
+import com.mycompany.nhom3_quanlyphonggyms.action.ManagerMembers;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import com.mycompany.nhom3_quanlyphonggyms.view.ExerciseTypeView;
+import com.mycompany.nhom3_quanlyphonggyms.view.InvoiceView;
 import com.mycompany.nhom3_quanlyphonggyms.view.LoginView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MainView;
 import com.mycompany.nhom3_quanlyphonggyms.view.MemberView;
@@ -30,6 +32,8 @@ public class ExerciseTypeController {
     private MemberView memberView;
     private RoomView roomView;
     private LoginView loginView;
+    private InvoiceView invoiceView;
+    private InvoiceController invoiceController;
 
     public ExerciseTypeController(ExerciseTypeView view, MainView mainView) {
         this.view = view;
@@ -46,6 +50,7 @@ public class ExerciseTypeController {
         this.view.addChooseTrainerListener(new ChooseTrainerListener());
         this.view.addChooseRoomListener(new ChooseRoomListener());
         this.view.addDangXuatListener(new ButtonDangXuat());
+        this.view.addChooseInvoiceListener(new ChooseInvoiceListener());
 
         loadData();
         showList();
@@ -83,6 +88,17 @@ public class ExerciseTypeController {
             loginView = new LoginView();
             LoginController controller = new LoginController(loginView);
             loginView.setVisible(true);
+            view.setVisible(false);
+        }
+    }
+    
+    class ChooseInvoiceListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerMembers managerMembers = new ManagerMembers();
+            invoiceView = new InvoiceView();
+            invoiceController = new InvoiceController(invoiceView, managerMembers, mainView);
+            invoiceView.setVisible(true);
             view.setVisible(false);
         }
     }
