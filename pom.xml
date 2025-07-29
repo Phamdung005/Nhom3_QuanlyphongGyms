@@ -22,19 +22,22 @@
         
 
         <!-- JAXB API -->
-    <dependency>
+    <dependency> <!-- (jaxb-api-2.3.1) -->
         <groupId>javax.xml.bind</groupId>
         <artifactId>jaxb-api</artifactId>
         <version>2.3.1</version>
-
     </dependency>
-
-    <dependency>
+    <dependency>  <!-- (jaxb-runtime-2.3.1) -->
         <groupId>org.glassfish.jaxb</groupId>
         <artifactId>jaxb-runtime</artifactId>
         <version>2.3.1</version>
-        </dependency>
-        <!-- JAXB RI -->
+    </dependency>
+    <dependency> <!-- (jcalendar-1.4) -->
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+            <type>jar</type>
+    </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
@@ -51,12 +54,7 @@
             <artifactId>KGradientPanel</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.toedter</groupId>
-            <artifactId>jcalendar</artifactId>
-            <version>1.4</version>
-            <type>jar</type>
-        </dependency>
+        
         <dependency>
             <groupId>unknown.binary</groupId>
             <artifactId>TimingFramework-0.55</artifactId>

@@ -91,7 +91,7 @@ public class TrainerController {
         view.getBtnChooseRoom().addActionListener(e -> {
             RoomView rv = new RoomView();
             RoomController rc = new RoomController(rv, mainView);
-            view.dispose();
+            rc.showRoomView();
             rv.setVisible(true);
         });
         view.getBtnDangXuat().addActionListener(e -> {

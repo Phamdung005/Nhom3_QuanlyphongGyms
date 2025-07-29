@@ -62,7 +62,7 @@ public class InvoiceController {
         public void actionPerformed(ActionEvent e) {
            roomView = new RoomView();
            RoomController roomController = new RoomController(roomView, mainView);
-           roomView.setVisible(true);
+           roomController.showRoomView();
            invoiceView.setVisible(false);
         }
     }
