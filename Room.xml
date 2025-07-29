@@ -2,7 +2,12 @@
 <rooms>
     <room>
         <id>1122</id>
-        <name>hát</name>
-        <capacity>1200</capacity>
+        <name>Gym</name>
+        <capacity>50</capacity>
+    </room>
+    <room>
+        <id>1123</id>
+        <name>Yoga</name>
+        <capacity>20</capacity>
     </room>
 </rooms>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <exerciseTypes>
     <exerciseType>
-        <id>22008192</id>
-        <name>GYM</name>
-        <description>aaaaaaaaaaaaaaa</description>
-        <fee>100000.0</fee>
-    </exerciseType>
-    <exerciseType>
-        <id>22008193</id>
-        <name>YOGA</name>
-        <description>aaaaaaaaaaaaaaa</description>
-        <fee>100000.0</fee>
-    </exerciseType>
-    <exerciseType>
         <id>22008194</id>
         <name>TAEWONDO</name>
-        <description>aaaaaaaaaaaaaaa</description>
-        <fee>100000.0</fee>
+        <description>Môn võ rèn luyện tốc độ, sức mạnh và kỹ năng tự vệ, giúp nâng cao sự kỷ luật và tinh thần chiến đấu.</description>
+        <fee>200000.0</fee>
+    </exerciseType>
+    <exerciseType>
+        <id>22008192</id>
+        <name>GYM</name>
+        <description>Tập luyện tăng cơ, giảm mỡ, cải thiện vóc dáng và sức khỏe tổng thể với thiết bị hiện đại.</description>
+        <fee>200000.0</fee>
+    </exerciseType>
+    <exerciseType>
+        <id>2230091</id>
+        <name>BOXING</name>
+        <description>rèn luyện suawcs khỏe</description>
+        <fee>200000.0</fee>
     </exerciseType>
     <exerciseType>
         <id>22008195</id>
         <name>KARATE</name>
-        <description>aaaaaaaaaaaaaaa</description>
-        <fee>100000.0</fee>
+        <description>Võ thuật Nhật Bản chú trọng kỹ thuật tay chân, tăng cường thể lực và khả năng phản xạ nhanh nhạy.</description>
+        <fee>324333.0</fee>
     </exerciseType>
 </exerciseTypes>

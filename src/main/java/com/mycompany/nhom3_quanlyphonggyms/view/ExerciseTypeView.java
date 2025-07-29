@@ -8,6 +8,8 @@ import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseType;
 import com.mycompany.nhom3_quanlyphonggyms.entity.ExerciseTypeXML;
 import com.mycompany.nhom3_quanlyphonggyms.utils.FileUtils;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -305,10 +307,10 @@ public class ExerciseTypeView extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(46, 46, 46)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(55, 55, 55)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31)
+                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSearch)))
@@ -364,7 +366,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
                         .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblName1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtFee, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,9 +385,7 @@ public class ExerciseTypeView extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(365, 365, 365))))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -553,10 +553,15 @@ public ExerciseType getExerciseTypeInfo() {
 public void showExerciseTypeList(List<ExerciseType> list) {
     String[] columnNames = {"Mã", "Tên", "Mô tả", "Học phí"};
     DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-    NumberFormat currencyFormatter = NumberFormat.getInstance(new Locale("vi", "VN"));
+
+    DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+    symbols.setGroupingSeparator('.');
+    symbols.setDecimalSeparator(',');
+
+    DecimalFormat df = new DecimalFormat("#,###", symbols);
 
     for (ExerciseType ex : list) {
-        String formattedFee = currencyFormatter.format(ex.getFee()) + " VND";
+        String formattedFee = df.format(ex.getFee());
         model.addRow(new Object[]{
             ex.getId(),
             ex.getName(),
@@ -564,8 +569,10 @@ public void showExerciseTypeList(List<ExerciseType> list) {
             formattedFee
         });
     }
+
     jTable1.setModel(model);
 }
+
 
 
 public void fillFormFromSelectedRow(List<ExerciseType> list) {
@@ -574,6 +581,7 @@ public void fillFormFromSelectedRow(List<ExerciseType> list) {
         txtId.setText(jTable1.getValueAt(row, 0).toString());
         txtName.setText(jTable1.getValueAt(row, 1).toString());
         txtDescription.setText(jTable1.getValueAt(row, 2).toString());
+        txtFee.setText(jTable1.getValueAt(row, 3).toString());
     }
 }
 
