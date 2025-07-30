@@ -2,7 +2,7 @@ package com.mycompany.nhom3_quanlyphonggyms.entity;
 
 
 import java.util.Date;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 
 @XmlRootElement(name = "member") // root XML tag cho mỗi đối tượng Member
 @XmlAccessorType(XmlAccessType.FIELD) // cho phép JAXB truy cập trực tiếp các field

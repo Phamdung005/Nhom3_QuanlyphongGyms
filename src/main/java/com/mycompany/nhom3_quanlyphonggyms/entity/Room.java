@@ -1,6 +1,6 @@
 package com.mycompany.nhom3_quanlyphonggyms.entity;
 
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 
 @XmlRootElement(name = "room")
 @XmlAccessorType(XmlAccessType.FIELD)

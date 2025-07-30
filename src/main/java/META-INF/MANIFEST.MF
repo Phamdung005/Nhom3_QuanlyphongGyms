@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: com.mycompany.quanlydoituongdacbiet.QuanLyDoiTuong.QuanLyDoi
- TuongDacBiet
+Main-Class: com.mycompany.Nhom3_QuanlyphongGyms.QuanLyDoiTuong.QuanLyPhongGyms
+
 

@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import static javax.xml.bind.DatatypeConverter.parseDate;
+import static jakarta.xml.bind.DatatypeConverter.parseDate;
 
 public class TrainerController {
     private MainView mainView;

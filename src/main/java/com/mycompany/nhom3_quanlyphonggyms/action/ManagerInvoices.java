@@ -7,7 +7,7 @@ package com.mycompany.nhom3_quanlyphonggyms.action;
 import com.mycompany.nhom3_quanlyphonggyms.entity.Invoice;
 import com.mycompany.nhom3_quanlyphonggyms.entity.InvoiceXML;
 
-import javax.xml.bind.*;
+import jakarta.xml.bind.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;

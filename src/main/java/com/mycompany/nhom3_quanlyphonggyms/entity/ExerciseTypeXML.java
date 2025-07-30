@@ -1,7 +1,7 @@
 package com.mycompany.nhom3_quanlyphonggyms.entity;
 
 import java.util.List;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 
 @XmlRootElement(name = "exerciseTypes")
 @XmlAccessorType(XmlAccessType.FIELD)
